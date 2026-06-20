@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import json
+import os
 import time
 from datetime import datetime
 from pathlib import Path
@@ -16,28 +16,31 @@ CLOSED_URL = "https://secure.billtrust.com/DAIKINCOMFORT/ig/closed"
 START_DATE = "01/01/2019"
 END_DATE = datetime.now().strftime("%m/%d/%Y")
 
+# Your Chrome is currently 149, so force UC to use matching ChromeDriver.
+# You can change this later if Chrome updates.
+CHROME_VERSION_MAIN = int(os.getenv("CHROME_VERSION_MAIN", "149"))
+
+CHROME_BINARY = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
 
 def get_base_dir() -> Path:
     """
-    For files stored in hps_pricing/goodman/code, BASE_DIR becomes hps_pricing/goodman.
+    For files stored in hps_pricing/goodman/code,
+    BASE_DIR becomes hps_pricing/goodman.
     """
     return Path(__file__).resolve().parents[1]
 
 
 BASE_DIR = get_base_dir()
 
-AUTH_DIR = BASE_DIR / "auth"
 DATA_DIR = BASE_DIR / "data"
-DOWNLOAD_DIR = BASE_DIR / "downloads" / "goodman"
+DOWNLOAD_DIR = BASE_DIR / "downloads"
 DEBUG_DIR = BASE_DIR / "debug"
-
-PROFILE_DIR = AUTH_DIR / "chrome_profile_goodman"
-COOKIES_FILE = AUTH_DIR / "goodman_cookies.json"
 METADATA_FILE = DATA_DIR / "goodman_invoices.csv"
 
 
 def ensure_dirs() -> None:
-    for path in [AUTH_DIR, DATA_DIR, DOWNLOAD_DIR, DEBUG_DIR, PROFILE_DIR]:
+    for path in [DATA_DIR, DOWNLOAD_DIR, DEBUG_DIR]:
         path.mkdir(parents=True, exist_ok=True)
 
 
@@ -47,11 +50,11 @@ def build_driver(
     headless: bool = False,
 ) -> uc.Chrome:
     """
-    Build Chrome with a persistent local profile.
+    Build a fresh Chrome driver every time.
 
-    This does not automate CAPTCHA or MFA.
-    This does not store your username/password.
-    It reuses the local Chrome profile saved in auth/chrome_profile_goodman.
+    No cookie reuse.
+    No saved Chrome profile reuse.
+    Login happens every run.
     """
     ensure_dirs()
 
@@ -61,7 +64,10 @@ def build_driver(
     download_dir.mkdir(parents=True, exist_ok=True)
 
     options = uc.ChromeOptions()
-    options.add_argument(f"--user-data-dir={PROFILE_DIR}")
+
+    if Path(CHROME_BINARY).exists():
+        options.binary_location = CHROME_BINARY
+
     options.add_argument("--start-maximized")
     options.add_argument("--disable-popup-blocking")
 
@@ -77,7 +83,12 @@ def build_driver(
     }
     options.add_experimental_option("prefs", prefs)
 
-    driver = uc.Chrome(options=options, use_subprocess=True)
+    driver = uc.Chrome(
+        options=options,
+        use_subprocess=True,
+        version_main=CHROME_VERSION_MAIN,
+    )
+
     driver.set_page_load_timeout(90)
 
     try:
@@ -94,29 +105,6 @@ def build_driver(
     return driver
 
 
-def save_cookies(driver: uc.Chrome) -> None:
-    ensure_dirs()
-    cookies = driver.get_cookies()
-
-    with COOKIES_FILE.open("w", encoding="utf-8") as f:
-        json.dump(cookies, f, indent=2)
-
-    print(f"Saved cookies to: {COOKIES_FILE}")
-
-
-def is_logged_in(driver: uc.Chrome) -> bool:
-    current_url = driver.current_url.lower()
-
-    if "/ig/signin" in current_url:
-        return False
-
-    closed_links = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/ig/closed"]')
-    signout_links = driver.find_elements(By.CSS_SELECTOR, 'a[href*="/ig/signout"]')
-    invoice_grid = driver.find_elements(By.CSS_SELECTOR, '[data-role="iginvoicetable"], .grid-table-responsive')
-
-    return bool(closed_links or signout_links or invoice_grid or "/ig/summary" in current_url)
-
-
 def take_debug_screenshot(driver: uc.Chrome, name: str) -> Path:
     ensure_dirs()
     path = DEBUG_DIR / name
@@ -130,10 +118,6 @@ def wait_for_download_to_finish(
     before_files: set[Path],
     timeout: int = 60,
 ) -> Optional[Path]:
-    """
-    Watch a folder for a new completed download.
-    Chrome temporary downloads usually end with .crdownload.
-    """
     start = time.time()
 
     while time.time() - start < timeout:
