@@ -1,0 +1,14 @@
+.env
+**/.env
+auth/
+**/auth/
+downloads/
+**/downloads/
+data/
+**/data/
+debug/
+**/debug/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/

@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+	<title>Daikin Comfort Technologies Customer Payment Portal</title>
+    <link href="/IG70/font-awesome-4.7.0/css/font-awesome.css?06152026" rel="stylesheet" />
+	<link href="/IG70/css/min/kendoui/kendo.common.min.css?06152026" rel="stylesheet" />
+	<link href="/IG70/css/skin.css?06152026" rel="stylesheet" />
+	<link href="/IG70/css/default.css?06152026" rel="stylesheet" />
+	<link href="/IG70/css/home.css?06152026" rel="stylesheet" />
+		<link href="/IG_CustFiles/css/IGStyles_GOODMANMFG.css" rel="stylesheet" />		<script src="/IG70/js/min/kendoui/jquery.min.js?06152026"></script>
+	<script src="/IG70/js/jquery/jquery.cookie.js?06152026"></script>
+	<script src="/IG70/js/min/kendo.igall.js?06152026"></script>
+	<script src="/IG70/js/kendo.multiselectbox.js?06152026"></script>
+    <script src="/IG70/js/jquery/jquery-ui-1.13.2.js?06152026"></script>
+    <script src="/IG70/js/jalert/jAlert.min.js?06152026"></script>
+    <script src="/IG70/js/jalert/jAlert-functions.min.js?06152026"></script>
+    <link href="/IG70/css/jalert/jAlert.css?06152026" rel="stylesheet" type="text/css" media="screen" />
+	<link href="/IG70/css/progressbar.css?06152026" rel="stylesheet" />
+    <style>
+        .divalert{
+            background: #1A3C57;
+            width:220px;
+            border-radius: 15px;
+            padding:20px;
+            font-size:18px;
+            color:#fff;
+        }
+    </style>
+
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.fr-CA.min.js?06152026"></script>
+	<script src="/IG70/js/min/kendoui/cultures/kendo.culture.es-MX.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.da-DK.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.de-DE.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.nl-NL.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.en-GB.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.en-US.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.es-ES.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.fi-FI.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.fr-FR.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.it-IT.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.no-NO.min.js?06152026"></script>
+    <script src="/IG70/js/min/kendoui/cultures/kendo.culture.sv-SE.min.js?06152026"></script>
+    <script type="text/javascript">
+    	var isSpinnerEnabled = "1";
+    	function toggleSpinner(toggle)
+    	{
+    		if(isSpinnerEnabled==0)
+    			return false;
+
+			if(toggle==1)
+			{
+				$("[role=totalPayAmount]").html("Loading...");
+				$("#mainContent .payment .overlay").remove();
+				$("#mainContent .payment").append('<div class="overlay"><div class="overlay-content"><img alt="Loading..." src="/IG70/img/ajax-spinner.gif"></div></div>');
+			}
+			else
+			{
+				$("#mainContent .payment .overlay").remove();
+			}
+		}
+    </script>
+
+	
+	<script src="/IG70/js/kendo.igtranslator.js?06152026"></script>
+		<script>$(document).kendoIGTranslator({
+		url: 'https://secure.billtrust.com/DAIKINCOMFORT/ig/translate',
+		messages: (function(){ return {"confirmCancelDisputeItem":"Are you sure you want to cancel this dispute item?","label.autoPay":"Auto-Pay","error.fieldsAreRequired":"The highlighted fields are required.","button.setup":"Setup","question.1.1":"What is your favorite hobby?","ei.packageName.peachtreequantum":"PeachTree Quantum","deleteComment":"Are you sure you want to delete this note?","label.account":"Account","error.invalidEmailFormat":"The value entered does not match the expected email format.","button.cancel":"Cancel","question.1.3":"Which elementary school did you attend?","ei.packageName.peachtreepremium":"PeachTree Premium","noLineItemsAvailable":"No Line Items Available","label.payAccount":"Payment Account","error.youEnterInvalidAmount":"The deduction amount cannot be greater than ","button.payAccount":"Pay Account","ei.packageName.quickbooks":"QuickBooks","noDocumentsFound":"No documents found. Try changing your filter to get more results.","label.threshold":"Max Payment","error.youEnterInvalidPhone":"The value entered does not match the expected format (xxx-xxx-xxxx).","button.payBills":"Pay Invoices","question.1.4":"What is the name of your closest childhood friend?","ei.packageName.csv":"CSV","noOpenDocuments":"There are no open documents.","label.accountType":"Account Type","error.invalidValueFormat":"The value entered does not match the expected format.","button.ok":"Ok","question.1.5":"What was the make of your first car?","ei.packageName.csvdetail":"CSV Detail","noClosedDocuments":"There are no closed documents.","label.bankAccount":"Bank Account","error.invalidEmailFormat.signUp":"Email Address: The value is not valid or does not match the expected value.","button.yes":"Yes","question.1.6":"What is the name of your favorite city?","ei.packageName.forefrontconstructionsuite":"Forefront Construction Suite","paymentAccountAdded":"Your payment account has been successfully added.","label.creditCard":"Credit Card","error.nameOnCardTooLong":"Name on Card cannot exceed 100 characters. Please try again.","button.no":"No","question.2.1":"Who is your favorite athlete?","ei.packageName.none":"None","paymentAccountSaved":"Your payment account details have been successfully saved.","label.group":"Group","error.invalidUserNameFormat":"You have entered an invalid User Name. Only the following special characters are allowed: a-z\u00a0(lower-case letters), A-Z\u00a0(upper-case letters), 0-9\u00a0(digits), _\u00a0(underscore), -\u00a0(hyphen), .\u00a0(period), @\u00a0(at sign) and \/ (slash). Please try again.","button.moveToClosed":"Move to Closed","question.2.2":"What street did you live on when you were 10 years old?","ei.packageName.pdf":"PDF","deletePayAcctConfirm":"Are you sure you want to delete this payment account?","label.friendlyName":"Friendly Name","error.nameInvalid":"You have entered invalid characters. Only the following characters are allowed: a-z (lower-case letters), A-Z (upper-case letters), 0-9 (digits), - (hyphen), . (period), and ' (apostrophe). Please try again.","button.moveToOpen":"Move To Open","question.2.3":"What is the name of your first born child?","ei.packageName.timberline":"Timberline","noPaymentAccounts":"No payment accounts have been added yet.","label.groupName":"Group Name","error.haventSelectedItems":"You haven't selected any items.","button.print":"Print","question.2.4":"What was your major in college?","ei.packageName.timberlinesummary":"Timberline Summary","doNotShowMessage":"Do not show this message again","label.note":"Note","error.mustHavePayAccount":"Please add a bank account or credit card to pay Invoices.","button.download":"Download","question.2.5":"What is the name of your favorite band?","ei.packageName.viewpointconstructiondefault":"Viewpoint Construction Default","payAccountOrBills":"We noticed that you have selected Invoices. Would you like to pay on the account or against the Invoices?","label.confirmation":"Confirmation","error.nameTooLong":"Your name has exceeded the max size in which we can store it. Please use a shortened version of your name.","button.delete":"Delete","question.2.6":"What is the name of your favorite cartoon character?","ei.packageName.viewpointconstructioncustom":"Viewpoint Construction Custom","confirmMoveToClosed":"There may be some items that still have a balance associated to them. Are you sure you want to proceed?","label.lastName":"Last Name","error.noDocsToPrint":"You must select at least one document to print.","button.close":"Close","question.3.1":"Where was your mother born?","ei.packageName.ubl":"Universal Business Language XML","confirmMoveToOpen":"Are you sure you want to move selected invoices to Open?","label.firstName":"First Name","error.answerTooLong":"Your answer cannot exceed 60 characters. Please try again.","button.continue":"Continue","question.3.2":"What was the street you grew up on?","ei.packageName.csvstorenumber":"CSV with Store #","confirmDeletePayAcct":"Are you sure you want to delete this payment account?","label.name":"Name","error.bankNameTooLong":"Bank Name cannot exceed 30 characters. Please try again.","button.save":"Save","question.3.3":"What was the name of the hospital where you were born?","ei.packageDesc.peachtreequantum":"Provides you with a data file with line item invoice detail that can be imported directly into Peachtree.  When importing data into Peachtree make sure you select \"All Fields\" in the Peachtree Import interface.","tm.BillName":"Invoice","label.status":"Status","error.invalidDateFormat":"You have entered an invalid date.","button.goToSettings":"Go to my Settings","question.3.4":"What was the name of your first pet?","ei.packageDesc.peachtreepremium":"Provides you with a data file with line item invoice detail that can be imported directly into Peachtree.  When importing data into Peachtree make sure you select \"All Fields\" in the Peachtree Import interface.","confirmDeleteLogin":"Are you sure you want to delete the login for \"%userName%\"?","label.account.s":"Account(s)","error.usernameTooLong":"User Name cannot exceed 100 characters. Please try again.","button.accept":"Accept","question.3.5":"What is your favorite ice cream flavor?","ei.packageDesc.quickbooks":"Select this option if you would like your bills delivered in Intuit Interchange Format (IIF) format. These files can be easily imported into Intuit's QuickBooks product line.  Data fields included are:  Invoice Number, Invoice Total, Invoice Date, Due Date, Purchase Order Number, and Notes.  In addition, the file will contain the Vendor Name and Account that you use for purchases from our company.","confirmEBillNotice":"By not allowing a user to change their option for eBill notifications,they will default to the notification preferences the admin is currently set for.%sep%Do you want to continue?","label.payAccount.s":"Payment Account(s)","error.noDocsToDownload":"You must select at least one document to download.","button.approve":"Approve","question.3.6":"What is your favorite sport to watch?","ei.packageDesc.csv":"Select this option to include a comma separated values (CSV) text file of your invoice information with your email. The CSV file format is a delimited data format that has each field separated by a comma with each invoice listed on a separate line.  Data fields included are:  Invoice Number, Invoice Total, Invoice Date, Due Date, Purchase Order Number, and Notes.  See the documentation for your accounting package for information on how to map columns in the CSV file to information in your accounting package.","userProfile":"User Profile","label.user.s":"User(s)","error.noDocsToMoveToClosed":"You must select at least one document to move to the Closed tab.","button.addBankAccount":"Add Bank Account","question.1.2":"What is the first name of your mother's father (grandfather)?","ei.packageDesc.csvdetail":"Select this option to include a detailed comma separated values (CSV) text file.  The CSV file will contain all header and detail information for your invoices and\/or statements.  <BR><BR>Header fields (e.g. Invoice Number, Total Due) will be included on each line of the CSV file.  Detail fields (line item information) will be included on the same line as the header information and will be in the order they appear on your invoice or statement.  Field headers ending in _COL are the detail fields.","autoPayExists":"An auto-pay is already setup for this account by another user to automatically pay bills that are under %threshold%. If you setup a new auto-pay, it will override the other user's auto-pay setting. Would you like to save a new auto-pay value?","label.custUserName":"User Name","error.noDocsToMoveToOpen":"You must select at least one document to move to Open.","button.addCreditCard":"Add Credit Card","ei.packageDesc.csvstorenumber":" Select this option to include a comma separated values (CSV) text file of your invoice information with your email. The CSV file format is a delimited data format that has each field separated by a comma with each invoice listed on a separate line. Data fields included are: Invoice Number, Invoice Total, Invoice Date, Due Date, Purchase Order Number, Store Number and Notes. See the documentation for your accounting package for information on how to map columns in the CSV file to information in your accounting package.","userSaved":"User settings have been successfully saved.","label.warning":"Warning","error.enterDate":"Please enter a date","mpay.cantMoveOrPay":"Based on your payment terms, the document\/s you selected are ineligible for manual payment or movement between the open and closed tabs. They will be paid then closed by auto-pay.","ei.packageDesc.forefrontconstructionsuite":"The Forefront Construction Suite, from Dexter + Chaney, provides summary invoice information which can be imported directly into Forefront.","noUsersAdded":"No users have been added yet.","label.paymentType":"Payment Type","error.enteredInvalidDate":"You have entered an invalid date","mpay.addPayAccount.title":"Action Required","ei.packageDesc.none":"Select this option if you do not wish to receive an Easy Import file with your invoices.","confirmRemoveAccount":"Are you sure you want to remove \"%account%\"?","label.userName":"User Name","error.amountToPayIsNegative":"The payment amount you've specified is a negative amount or 0. Please select a positive amount to pay.","mpay.addPayAccount.title.ach":"Add a Bank Account","ei.packageDesc.pdf":"Allows you to create a combined PDF of the invoices and statements you have selected.","userHasBeenUnlocked":"The login for <b>%userName%<\/b> has been unlocked.","label.invoiceNumber":"Invoice #","error.reasonReqired":"You must enter a reason before making your payment.","mpay.addPayAccount.title.cc":"Add a Credit Card","ei.packageDesc.timberline":"Provides you with a data file with line item invoice detail that can be imported directly into Timberline.","confirmDeleteGroup":"Are you sure you want to delete the group \"%groupName%\"?","label.invoiceAmount":"Invoice Amount","error.greaterThan99":"The number of invoices selected for payment is %total%, must not exceed 98.","ei.packageDesc.timberlinesummary":"Provides you with a data file summary that can be imported directly into Timberline.  No line item invoice detail is included in this format.<BR><BR>Comma Delimited File Format:<BR><BR>API (Header Identifier),Vendor Number,Invoice Number,,Invoice Amount,Discount Amount,Invoice Date,Invoice Date,Discount Date,,Invoice Date<BR><BR>APD (Distribution Identifier),PO Number,1,,Job Number,,,,,,,Total Due<BR><BR>*Adjacent commas represent space holders","addNewGroup":"Add New Group","label.payAmount":"Pay Amount","error.totalAmountToPayIsNegative":"The total payment amount you've specified is a negative amount or 0. Please review your payment amounts to ensure that you are making a positive payment.","ei.packageDesc.viewpointconstructiondefault":"The Viewpoint Construction Software interface provides summary and line item invoice detail which can be imported directly into Viewpoint.<BR><BR>Pipe Delimited File Format:<BR><BR>APHB (Header Identifier)|Vendor Number|Invoice Number|Description|Invoice Date|Invoice Total<BR><BR>APLB (Line Identifier)|Vendor Number|Line Number| Description|Units|Unit Cost|Gross Amount|PO Number","noDPaymentsFound":"No payments found. Try changing your filter to get more results.","label.reason":"Reason","error.invoiceAmountToPayIsNegative":"As you cannot set the payment amount to a negative amount or 0, it has been reset to the outstanding balance for this bill.","ei.packageDesc.viewpointconstructioncustom":"The Viewpoint Construction Software interface provides summary and line item invoice detail which can be imported directly into Viewpoint.","yourPasswordHasBeenChanged":"Your password has been successfully changed.","label.enabled":"Enabled","error.moreCreditTaken":"You have chosen to take more credit than is available for this item. Please review the payment amount to make sure you have entered it correctly.","ei.packageDesc.ubl":"Provides you with a data file that is compatible with UBL 2.0 schema.","noPaymentsToShow":"There are no payments to show at this time.","label.disabled":"Disabled","error.creditMemoAmountIsZero":"As you cannot set the payment amount to 0, it has been reset to the outstanding balance for this bill.","ei.workflowConfirmTitle":"Your report is generating...","preAuthDebitDelayNote":"Note that payments cannot be scheduled within the next %delayDays% calendar days.","label.search":" Search...","ei.workflowConfirmText":"You will receive the report at the email address associated to this account within a few minutes.","preAuthDebitDelayNoteOneDay":"Note that payments cannot be scheduled within the next calendar day.","button.editBankAccount":"Edit Bank Account","button.editCreditCard":"Edit Credit Card"}; })(),
+		languages: ["en_US"],
+		currentLanguage: 'en_US',
+		onBeforeSwitch: function() {
+			$('#curlang').trigger('click');
+		},
+		onAfterSwitch: function(response) {
+			var
+				kendoLang = response.lang.lang.replace('_', '-')
+			;
+			kendo.culture(kendoLang);
+			$('#curlang').html(response.lang.title);
+			$('body').removeClass('en_US').addClass(response.lang.lang);
+			$('body input[data-role=datepicker]').each(function(){
+				var
+					datePicker = $(this).data('kendoDatePicker')
+				;
+				if(!datePicker){
+					return;
+				}
+				datePicker.setOptions({culture: kendoLang, format:'MM/dd/yyyy'});
+			});
+		}
+	});
+        let localeFormattingJson = '{"numbers":{"decimalSeparator":".","groupSeparator":","}}';
+        localStorage.setItem('locale_formatting_data', localeFormattingJson);
+	</script>
+	<script src="/IG70/js/helpers/loader.js?06152026"></script>
+	<script src="/IG70/js/helpers/currency.js?06152026"></script>
+    <script src="/IG70/js/helpers/languageParser.js?06152026"></script>
+	<script src="/IG70/js/kendo.igajaxindicator.js?06152026"></script>
+	<script src="/IG70/js/kendo.igvalidator.js?06152026"></script>
+	<script src="/IG70/js/kendo.conditionalvalidation.js?06152026"></script>
+	<script src="/IG70/js/kendo.igtooltip.js?06152026"></script>
+	<script src="/IG70/js/kendo.igdialog.js?06152026"></script>
+			<script src="/IG70/js/kendo.igmenu.js?06152026"></script>
+	<script src="/IG70/js/kendo.igtimeout.js?06152026"></script>
+	<script src="/IG70/js/kendo.iginvoicetable.js?06152026"></script>
+	<script src="/IG70/js/kendo.igpaymenttable.js?06152026"></script>
+	<script src="/IG70/js/kendo.iglineitemtable.js?06152026"></script>
+	<script src="/IG70/js/kendo.igpaymenthistorytable.js?06152026"></script>
+	<script src="/IG70/js/kendo.ignotifications.js?06152026"></script>
+			<script src="/IG70/js/kendo.igpaymentsettings.js?06152026"></script>
+				<script src="/IG70/js/kendo.igusermanagement.js?06152026"></script>
+				<script src="/IG70/js/kendo.igaccountmanagement.js?06152026"></script>
+				<script src="/IG70/js/kendo.iggroupmanagement.js?06152026"></script>
+			<script>$(document).ready(function() { kendo.init($('body')); });</script>
+	<script>
+		$(document).ready(function() {
+			var enableAvalara		=	$("#enable-avalara").val();
+			var avalaraNotifyMsg	=	$("#avalara-notify-msg").val();
+			if( (enableAvalara == 'Y') && avalaraNotifyMsg != '' ){
+				$.ajax({
+					type: 'POST',
+					url: "https://secure.billtrust.com/DAIKINCOMFORT/ig/avalara",
+					data: "",
+					success: function(data) {
+						var json = JSON.parse(data);
+						var message = json['message'];
+						var webportalurl = json['webportalurl'];
+
+						if(message != '' ){
+							//open Model
+							$(".notifyModel-box").delay(100).animate({top: '0px'}, 700);
+							$("#avalaraMessage").html(message);
+							if(webportalurl != false){
+								$("#renewBtn").attr("data-renew-url", webportalurl);
+							}
+						}
+					},
+					dataType: 'html'
+				});
+
+
+				$('.notifyModel-closeBtn').on('click',function () {
+					closeAvalaraModel();
+				});
+
+				$('#renewBtn').on('click',function () {
+					closeAvalaraModel();
+					window.open($("#renewBtn").attr("data-renew-url"), '_blank');
+				});
+
+				function closeAvalaraModel()
+				{
+					//Close Model
+					$(".notifyModel-box").delay(100).animate({top: '-53px'}, 700);
+
+					$.ajax({
+						type: "POST",
+						url: "https://secure.billtrust.com/DAIKINCOMFORT/ig/avalara-close",
+						data: "",
+						success: function(data) {
+							$("#avalara-notify-msgss").val('');
+						},
+						dataType: 'html'
+					});
+				}
+			}			
+
+		});
+	</script>
+	<script>
+        // INV-12823 Local hosted pendo replaced with cdn hosted pendo
+        (function(apiKey){
+			(function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
+			v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
+			o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+			y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+			z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+            pendo.initialize({"visitor":{"id":"klongoria@comcast.net","ProfileEmailAddress":"klongoria@comcast.net","AuthenticatedEmailAddress":"klongoria@comcast.net","IsImpersonated":false,"BuyerName":"HOUSTON POWER SAVERS"},"account":{"id":"d1c68b8b-47fa-442d-8114-b6c49a1474c2","CSRBurnID":"burn:billtrust:bandp:customer:prod:2082","PrimaryTenantAccountID":"d1c68b8b-47fa-442d-8114-b6c49a1474c2","CentricType":"Account"}});
+        })('e71f9e9e-9873-487c-4c52-63d1ddcba564');
+    </script>
+	<script>
+		// INV-20064 - Required for PCI 4 Tamper Detection and Monitoring
+		// If any event in the frontend, is blocked by the Conent-Security-Policy immiedately log the event to Splunk for review.
+		window.addEventListener('securitypolicyviolation', async function (evt) {		
+			// Details can be found here:
+			// https://developer.mozilla.org/en-US/docs/Web/API/SecurityPolicyViolationEvent
+			var cspViolationData = { 
+				"site": window.location.hostname,
+				"documentUri": evt.documentURI,
+				"disposition": evt.disposition,
+				"referrer": evt.referrer,
+				"violatedDirective": evt.violatedDirective,
+				"effectiveDirective": evt.effectiveDirective,
+				"originalPolicy": evt.originalPolicy,
+				"blockedUri": evt.blockedURI,
+				"sourceFile": evt.sourceFile,
+				"lineNumber": evt.lineNumber,
+				"columnNumber": evt.columnNumber,
+				"sample": evt.sample
+			};
+			
+			console.log('logging csp violation to billtrust splunk "bt_frontend_security"', cspViolationData);
+			
+			await fetch('https://http-inputs-billtrust.splunkcloud.com/services/collector/event', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': 'Splunk 200e4549-d35a-4625-89b9-ca4f67cbf5c0' // Don't panic. This follows Splunk's best practice for javascript/browser driven logging.
+				},
+				body: JSON.stringify({
+					index: 'bt_frontend_security',
+					event: cspViolationData
+				})
+			});				
+		});
+		</script>
+</head>
+
+<body class="container ig7 en_US desktop  customerCssApply">
+<input type="hidden"  id="application-environment" value= "Containers">
+<input type="hidden"  id="firstRequestTime" value= "">
+<input type="hidden"  id="sessionRequestTime" value="">
+<input type="hidden"  id="accessToken" value="">
+<input type="hidden"  id="platformRequest" value= "1">
+<input type="hidden"  id="enable-avalara" value="N" >
+<input type="hidden"  id="avalara-notify-msg" value="" >
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CT4P74ZW0D" ></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CT4P74ZW0D', {
+    'cookie_domain': 'billtrust.com',
+    'send_page_view': false
+});
+gtag('set', { 
+    'dimension1': '2082', 
+    'dimension2': '2082' 
+});
+gtag('event', 'page_view', { 
+    'dimension1': '2082', 
+    'dimension2': '2082' 
+});
+</script>
+
+    <script>
+        var _prum = [['id', '59ce86558d4ea38769f752aa'],
+            ['mark', 'firstbyte', (new Date()).getTime()]];
+        (function () {
+            var s = document.getElementsByTagName('script')[0]
+                , p = document.createElement('script');
+            p.async = 'async';
+            p.src = '//rum-static.pingdom.net/prum.min.js';
+            s.parentNode.insertBefore(p, s);
+        })();
+    </script>
+	<div class="header">
+				<div data-msgid-block="block.views.promohead.1000">
+			<table width="100%" height="100px" border="0" cellspacing="0" cellpadding="10" align="center" class="headerTable">
+  <tr>
+    <td align="center" class="logo"><img src="/IG_CustFiles/images/daikincomfort/logo.png" /></td>
+  </tr>
+</table>		</div>
+				<div class="menuicon"><span data-msgid=label.menu.0001 data-test=label.menu>Menu</span></div>
+	</div>
+	<div class="content" data-role="igajaxindicator" data-type="spinner" data-is-enabled="false" style="padding-bottom: 135px;">
+		<div class="wrapper">
+									<div class="k-window white" id="kwindow">
+				
+<div class="navcontainer hidden">
+	<div class="nav" >
+		<span class="fa fa-close closeicon" id="closemenu"></span>
+		<ul class="mainmenu" data-role="igmenu" data-container="mainContent" data-brandparms="N">
+                            <li><a href="https://secure.billtrust.com/DAIKINCOMFORT/ig/summary"><span data-msgid=label.summary.0001 data-test=label.summary>Summary</span></a></li>
+                        <li class="nobg"><a href="https://secure.billtrust.com/DAIKINCOMFORT/ig/open"><span data-msgid=tm.label.open.0001 data-test=tm.label.open>Open</span></a></li>
+			<li class="selected"><a href="https://secure.billtrust.com/DAIKINCOMFORT/ig/closed" class="disabled"><span data-msgid=tm.label.closed.0001 data-test=tm.label.closed>Closed</span></a></li>
+							<li><a href="https://secure.billtrust.com/DAIKINCOMFORT/ig/payment-history" class="disabled"><span data-msgid=label.paymentHistory.0001 data-test=label.paymentHistory>Payment History</span></a></li>
+						<li id="settingsMenu"><a href="https://secure.billtrust.com/DAIKINCOMFORT/ig/settings"><span data-msgid=label.settings.0001 data-test=label.settings>Settings</span></a></li>
+			
+	<li class="autopaybtn" style="list-style-type:none; display:none"><button class="autopaylink" onclick="displayAutoPayPage();"><span data-msgid=button.enrollInAutopay.0001 data-test=button.enrollInAutopay>Enroll in Autopay</span></button></li>
+
+	<script type="text/javascript">
+		function displayAutoPayPage() {
+			$(".mainmenu li").removeClass('selected');	
+			if(!$.cookie('autopaylinkEnabled')) {
+			  $.cookie('autopaylinkEnabled',true); 
+			}	
+			$("#settingsMenu").addClass('selected').find('a').trigger('click');
+		}
+	</script>			<li class="user">
+			    <span class="fa fa-user-o"></span>
+			    <em>Kenneth Longoria</em>
+				<span class="fa fa-chevron-down"></span>
+
+			</li>
+			<ul class="usermenu">
+				<li class="faqLink"><span class="fa fa-question-circle"></span><a href="javascript:"><span data-role="igdialog" data-template="dialogFAQTemplate" data-click="open"><span data-msgid=faq.0001 data-test=faq>FAQ</span></span></a></li>
+									<li><span class="fa fa-lock"></span><a href="https://secure.billtrust.com/DAIKINCOMFORT/ig/signout"><span data-msgid=button.signOut.0001 data-test=button.signOut>Sign Out</span></a></li>
+							</ul>
+		</ul>
+        <a class="viewDesktopSite" id="viewDesktop"><span data-msgid=label.viewDesktopSite.0001 data-test=label.viewDesktopSite>View Desktop Site</span></a>
+		<div class="clearfix"></div>
+	</div>
+</div>
+				<div id="mainContent" class="mainContent">
+					<div data-role="iginvoicetable">   
+    <!--START OF ACTION/BUTTON BAR FOR OPEN TAB -->
+    <div class="actions">
+        <div class="search">
+            <h1 class="h1OpenClose"><span data-msgid=tm.label.closed.0001 data-test=tm.label.closed>Closed</span></h1>
+        </div>
+                     <!-- INV-20992, Header date filter mobile responsive -->
+                             <div class="searchTop">
+                    <!-- INV-20992, Header date filter mobile responsive -->
+                    <div class="headerDateFilter">
+                        <div class="dateFilterLabel"></div>
+                        <div class="headerDropdownFilter">
+                            <a href="javascript:void(0);" id="dropdownlistDateFilter" style="cursor: pointer;text-decoration: none;"> 
+                                <input class="k-textbox k-input" style="width:170px !important;cursor: pointer;" id="billDateDropDownSelectedValues" readonly="readonly" />
+                                <span class="fa fa-chevron-down" style="margin: 0px 15px 0px -25px;opacity: 0.8;color:#565656;font-size:14px;"></span> 
+                            </a>
+                        </div>
+                        <span id="formContainer"></span>
+                        <div class="search-info-mobile"><span data-msgid=label.searchInfo.0001 data-test=label.searchInfo>Click on a column header to quickly filter values using search and sort functionality.</span></div>
+                    </div>
+                    <div class="search">            
+                        <button type="button" class="k-button size1 filter filterSortAndReset"><span data-msgid=button.filterSort.0001 data-test=button.filterSort>Filter / Sort</span></button>
+                    </div>
+                    <button type="button" class="k-button size1 auto resetAllButton filterSortAndReset"  data-role="iginvoicetable" data-click="clearFilter"  role="resetAll" style="float: right;"><span data-msgid=button.clearFilters.0001 data-test=button.clearFilters>Clear Filters</span></button>		
+                </div>
+             
+            <div class="clearfix"></div>
+            <div class="buttons buttonSlider buttonradius">
+                <!--FOR "Print" & "Download" & "More"/"Less" BUTTON DISPLAY (Closed Tab)-->
+                                    <button type="button" class="k-button size1 auto printButton" data-role="iginvoicetable" data-click="openDialogPrint" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/closed/print"><span class="fa fa-print"></span> <span data-msgid=button.print.0001 data-test=button.print>Print</span></button>
+                    <button type="button" class="k-button size1 auto showmore blueWhite" data-role="iginvoicetable" data-click="responsiveActionBar"><span class="fa fa-chevron-up"></span>  <span data-msgid=label.more.0001 data-test=label.more>More</span></button>
+                    <button type="button" class="k-button size1 auto toggleButtons downloadButton" data-role="iginvoicetable" data-click="openDialogDownload" data-url-dl="https://secure.billtrust.com/DAIKINCOMFORT/ig/easyimport/select-invoices/closed"><span class="fa fa-download"></span> <span data-msgid=button.download.0001 data-test=button.download>Download</span></button>
+                                                    <!--END OF "Print" & "Download" & "More"/"Less" BUTTON DISPLAY (Closed Tab)-->
+                <!--FOR "Move To Open" BUTTON DISPLAY (Closed Tab)-->
+                                    <button type="button" class="k-button size1 auto toggleButtons" data-role="iginvoicetable" data-click="dialogMoveToOpen" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/move-to-open"><span class="fa fa-check"></span> <span data-msgid=button.moveToOpen.0001 data-test=button.moveToOpen>Move To Open</span></button>
+                                                    <div class="search-info"><span data-msgid=label.searchInfo.0001 data-test=label.searchInfo>Click on a column header to quickly filter values using search and sort functionality.</span></div>
+            </div>
+                <!--END OF SETUP FOR BUTTON BAR CLOSED TAB -->
+    </div>
+    <!--END OF ACTION/BUTTON BAR FOR OPEN TAB -->
+
+    <!-- Start summary filter customization in open tab -->
+        <!-- End summary filter customization in open tab -->
+
+            <div class="clearfix hideMobile"></div>
+    
+        <div class="grid-table-responsive"
+         data-role="iginvoicetable"
+         data-init="initInvoiceTable"
+         data-data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/data/closed"
+         data-data-url-total="https://secure.billtrust.com/DAIKINCOMFORT/ig/data/closed/total"
+         data-campaign-message-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/settings/flash-message"
+         data-settings-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/settings/notifications"
+         data-columns='[{"title":"","headerAttributes":{"class":"i-cell-select"}},{"title":"<span data-msgid=download.file.0001 data-test=download.file>File<\/span>","headerAttributes":{"class":"i-cell-download"}},{"title":"<span data-msgid=label.note.0001 data-test=label.note>Note<\/span>","headerAttributes":{"class":"i-cell-memo"}},{"title":"<span data-msgid=label.dispute.0001 data-test=label.dispute>Dispute<\/span>","headerAttributes":{"class":"i-cell-dispute"}},{"title":"<span data-msgid=label.group.0001 data-test=label.group>Group<\/span>","headerAttributes":{"class":"i-cell-group"},"field":"Group","filterType":"group"},{"field":"AccountNumber","title":"<span data-msgid=co.AccountNumber>Account #<\/span>","filterType":"accountNumber","headerAttributes":{"class":"i-cell-accountnumber"}},{"field":"ItemType","title":"<span data-msgid=co.ItemType>Document Type<\/span>","filterType":"string","headerAttributes":{"class":"i-cell-itemtype"}},{"field":"BillDate","title":"<span data-msgid=co.BillDate>Inv Date<\/span>","filterType":"billDate","headerAttributes":{"class":"i-cell-billdate"}},{"field":"DueDate","title":"<span data-msgid=co.DueDate>Due Date<\/span>","filterType":"date","headerAttributes":{"class":"i-cell-duedate"}},{"field":"InvoiceNumber","title":"<span data-msgid=co.InvoiceNumber>Invoice #<\/span>","filterType":"autoComplete","headerAttributes":{"class":"i-cell-invoicenumber"}},{"field":"TotalDue","title":"<span style=\u0027margin-right:5px\u0027 data-msgid=co.TotalDue>Invoice Amount<\/span>","filterType":"numeric","headerAttributes":{"class":"i-cell-totaldue","style":"text-align:right"}},{"field":"DiscAmt","title":"<span style=\u0027margin-right:5px\u0027 data-msgid=co.DiscAmt>Disc Amt<\/span>","filterType":"numeric","headerAttributes":{"class":"i-cell-discamt","style":"text-align:right"}},{"field":"DiscDate","title":"<span data-msgid=co.DiscDate>Disc Date<\/span>","filterType":"date","headerAttributes":{"class":"i-cell-discdate"}},{"field":"DisputeTotal","title":"<span style=\u0027margin-right:5px\u0027 data-msgid=co.DisputeTotal>Dispute Total<\/span>","filterType":"numeric","headerAttributes":{"class":"i-cell-disputetotal","style":"text-align:right"}},{"field":"RealOpenBalance","title":"<span style=\u0027margin-right:5px\u0027 data-msgid=co.OpenBalance>Remaining Balance<\/span>","filterType":"numeric","headerAttributes":{"class":"i-cell-realopenbalance","style":"text-align:right"}},{"field":"UDP1","title":"<span data-msgid=co.UDP1>JobName<\/span>","filterType":"string","headerAttributes":{"class":"i-cell-udp1"}},{"field":"AmtPaid","title":"<span style=\u0027margin-right:5px\u0027 data-msgid=co.AmtPaid>Paid Online<\/span>","filterType":"numeric","headerAttributes":{"class":"i-cell-amtpaid","style":"text-align:right"}},{"field":"PONumber","title":"<span data-msgid=co.PONumber>PO Number<\/span>","filterType":"autoComplete","headerAttributes":{"class":"i-cell-ponumber"}}]'
+         data-row-template="rowTemplate"
+         data-filters='[]'
+         data-selected-invoices='[]'
+         data-opposite-selected-invoices='[]'
+         data-is-select-all-checked="false"
+         data-is-select-statement-all-checked="false"
+         data-is-select-invoice-all-checked="false"
+         data-filter-templates='{"accountNumber":"ftpl_accountNumber","group":"ftpl_group","string":"ftpl_string","date":"ftpl_date","billDate":"ftpl_billdate","numeric":"ftpl_numeric","autoComplete":"ftpl_autoComplete"}'
+         data-is-open="false"
+         data-currency='{"code":"","isDefault":true,"culture":"en-US","displayCode":"(USD)","isoDisplayCode":""}'
+         data-has-sum-filter='false'
+         data-page-timeout="175000"
+    ></div>
+            <div class="i-grid-footer">
+            <div class="left"><span data-msgid=label.totalDocuments.0001 data-test=label.totalDocuments>Total Documents</span><span data-msgid=colon.0001 data-test=colon>:</span> <span role="totalDocs">0</span> (<span role="totalDocsSelected">0</span> <span data-msgid=label.selected.0001 data-test=label.selected>selected</span>)</div>
+            <div class="right">(USD) <span data-msgid=label.totalSelectedAmount.0001 data-test=label.totalSelectedAmount>Total Selected Amount</span> <span data-msgid=colon.0001 data-test=colon>:</span> <span role="totalBalSelected" class="total-amt"></span></div>
+        </div>
+    </div>
+<script id="rowTemplate" type="text/x-kendo-tmpl">
+    <tr data-id="#: DocumentId#">
+            <td class="i-cell-select utility">
+                <input role="selectOne" type="checkbox" name="DocumentId" id="#: DocumentId#" data-doc-type="#: ItemType#" data-pay-amount="#: PayAmt#"  data-is-managed="#: IsManaged#" value="#: DocumentId#" />
+                <div class="GridMobileTitle"><label for="#: DocumentId#"><span data-msgid=label.select.0001 data-test=label.select>Select</span></label></div>
+            </td>
+
+                                            <td class="i-cell-download utility">
+                                            # if (PDFUrl != "") { #
+                    <a id="viewPdfId#: DocumentId#" class="view-pdf-download" href="javascript:" data-click="openEncryptPdfFile" data-pdf-url="/IG70/retrievebill.php" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/data/encrypt-fileurl" data-role="iginvoicetable" title="Download"></a>
+                        # } #    
+                                        <div class="download-popup" id="popup#: DocumentId#"></div>
+                    <div class="GridMobileTitle"><span data-msgid=label.view.0001 data-test=label.view>View</span></div>
+                </td>
+                        # var noteIconClass = Comments.length > 0 ? 'memo' : 'memo-add'; #
+                <td class="i-cell-memo utility">
+                    <a class="#: noteIconClass #" href="javascript:" data-role="iginvoicetable" data-click="openAddCommentDialog"
+                        data-template="dialogAddCommentTemplate" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/comment/create">#: Comments.length > 0 ? Comments.length : '' #</a>
+                    # if(Comments.length){# <a class="expand" href="javascript:" data-role="iginvoicetable" data-click="toggleCommentsRow" data-row-template="commentsRowTemplate"></a> #}#
+                    <div class="GridMobileTitle"><span data-msgid=label.note.0001 data-test=label.note>Note</span></div>
+                </td>
+                            <td class="i-cell-dispute utility" data-th="Dispute">
+                # if(IsManaged === 'Y'){#
+                    <a title='Based on your payment terms, the dispute functionality is disbled.' style='opacity: 0.3'>
+                                                    <img src="/IG70/img/dispute_icon.png" />
+                                                <div class="GridMobileTitle"><span data-msgid=label.dispute.0001 data-test=label.dispute>Dispute</span></div>
+                    </a>
+                # } else { #
+                                            #if(PDFUrl == ""){#
+                            <span id="target" title="This document is not eligible for disputes.">
+                               <img style="opacity: 0.65" src="/IG70/img/dispute_icon.png" />
+                            </span>
+                        #}else{#
+                            <a  href="javascript:" data-role="igdialog" data-click="open"
+                                data-url-params='{"DocumentId":"#: DocumentId#","FFDId":"#: FFDId#"}'
+                                data-template="dialogLineItemsTemplate" data-title="<span data-msgid=disputeInvoice.0001 data-test=disputeInvoice>Dispute Invoice</span>" >
+                                <img src="/IG70/img/dispute_icon.png" />
+                            </a>
+                        #}#
+                                    #} #
+                                <div class="GridMobileTitle"><span data-msgid=label.dispute.0001 data-test=label.dispute>Dispute</span></div>
+                                </td>
+                            <td class="i-cell-group disabled"><div class="GridMobileTitle"><span data-msgid=label.group.0001 data-test=label.group>Group</span></div><div class="display-filed">#= Group#</div></td><td class="i-cell-accountnumber disabled"><div class="GridMobileTitle"><span data-msgid=co.AccountNumber>Account \#</span></div><div class="display-filed">#= AccountNumber#</div></td><td class="i-cell-itemtype disabled"><div class="GridMobileTitle"><span data-msgid=co.ItemType>Document Type</span></div><div class="display-filed">#= ItemType#</div></td><td class="i-cell-billdate disabled"><div class="GridMobileTitle"><span data-msgid=co.BillDate>Inv Date</span></div><div class="display-filed">#= BillDate#</div></td><td class="i-cell-duedate "><div class="GridMobileTitle"><span data-msgid=co.DueDate>Due Date</span></div><div class="display-filed">#= DueDate#</div></td><td class="i-cell-invoicenumber "><div class="GridMobileTitle"><span data-msgid=co.InvoiceNumber>Invoice \#</span></div><div class="display-filed">#= InvoiceNumber#</div></td><td style="text-align:right;padding-right:15px" class="i-cell-totaldue disabled"><div class="GridMobileTitle"><span style='margin-right:5px' data-msgid=co.TotalDue>Invoice Amount</span></div><div class="display-filed">#= parseFloat(+TotalDue || 0.00).toFixed(2) #</div></td><td style="text-align:right;padding-right:15px" class="i-cell-discamt disabled"><div class="GridMobileTitle"><span style='margin-right:5px' data-msgid=co.DiscAmt>Disc Amt</span></div><div class="display-filed">#= parseFloat(+DiscAmt || 0.00).toFixed(2) #</div></td><td class="i-cell-discdate disabled"><div class="GridMobileTitle"><span data-msgid=co.DiscDate>Disc Date</span></div><div class="display-filed">#= DiscDate#</div></td><td style="text-align:right;padding-right:15px" class="i-cell-disputetotal disabled"><div class="GridMobileTitle"><span style='margin-right:5px' data-msgid=co.DisputeTotal>Dispute Total</span></div><div class="display-filed">#= parseFloat(+DisputeTotal || 0.00).toFixed(2) #</div></td><td style="text-align:right;padding-right:15px" class="i-cell-realopenbalance "><div class="GridMobileTitle"><span style='margin-right:5px' data-msgid=co.OpenBalance>Remaining Balance</span></div><div class="display-filed">#= 'Y'== 'N' && RealOpenBalance == '-1000000000000000000.00' ? '' : parseFloat(+RealOpenBalance || 0.00).toFixed(2) #</div></td><td class="i-cell-udp1 disabled"><div class="GridMobileTitle"><span data-msgid=co.UDP1>JobName</span></div><div class="display-filed">#= UDP1 || ""#</div></td><td style="text-align:right;padding-right:15px" class="i-cell-amtpaid disabled"><div class="GridMobileTitle"><span style='margin-right:5px' data-msgid=co.AmtPaid>Paid Online</span></div><div class="display-filed">#= AmtPaid #</div></td><td class="i-cell-ponumber disabled"><div class="GridMobileTitle"><span data-msgid=co.PONumber>PO Number</span></div><div class="display-filed">#= PONumber#</div></td>            <td class="seemore"><div><span data-msgid=label.seeMore.0001 data-test=label.seeMore>See More...</span></div></td>
+    </tr>
+</script>
+
+<script id="rowTemplateLineItems" type="text/x-kendo-tmpl">
+    <tr>
+            <td class="i-cell-select utility">
+                #: LINE_ITEM_ID_COL#
+            </td>
+             <td class="i-cell-select utility">
+               #: DESC_COL#
+            </td>
+             <td class="i-cell-select utility">
+               #: UM_ORDER_COL#
+            </td>
+             <td class="i-cell-select utility">
+                #: QTY_SHIP_COL#
+            </td>
+            <td class="i-cell-select utility">
+                #: NET_UNIT_PRICE_COL#
+            </td>
+             <td class="i-cell-select utility">
+                #: NET_AMOUNT_COL#
+            </td>
+             <td class="i-cell-select utility">
+                #: DISPUTED#
+            </td>
+             <td class="i-cell-select utility">
+                #: STATUS#
+            </td>
+            <td class="i-cell-select utility">
+                #: ACTIONS#
+            </td>
+    </tr>
+</script>
+
+<script id="popupRowTemplate" type="text/x-kendo-tmpl">
+  # if(data.length > 0){
+        for (var i = 0; i < data.length; i++) { 
+            if(data[i].filetype == 'pdf'){ #
+                <a class="view-pdf-link" href="javascript:" data-role="iginvoicetable" data-pdf-url="#: data[i].url#" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/data/encrypt-fileurl"><img src="#: data[i].icon#" width="24px" hspace="0" vspace="0" border="0" style="margin-right:1rem" />#: data[i].title #</a>
+            #}else{#
+                <a class="download-ubl" href="javascript:" data-fileurl="#: data[i].url#"><img src="#: data[i].icon#" width="24px" hspace="0" vspace="0" border="0" style="margin-right:1rem" />#: data[i].title #</a>
+            #}
+        } 
+    } else { #
+        <a href="javascript:"><span data-msgid=download.noFilesAvailable.0001 data-test=download.noFilesAvailable>No file available</span></a>
+    #} #
+</script>
+<form id="fileDownloadForm" method='post' action="https://secure.billtrust.com/DAIKINCOMFORT/ig/data/download-file" target="_blank">
+    <input type="hidden" name="url" id="ublurl" value="">
+</form>
+<script id="commentsRowTemplate" type="text/x-kendo-tmpl">
+    <tr>
+        <td class="space"></td>
+        <td class="date"># if(canDelete){# <a class="delete" href="javascript:" data-role="iginvoicetable" data-click="deleteComment" data-comment-id="#= id#" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/comment/delete"></a> #}# #: date#</td>
+        <td class="sep">|</td>
+        <td class="username" title="#: username#">#: username#</td>
+        <td class="sep">|</td>
+        <td class="text">#: text#</td>
+    </tr>
+</script>
+
+<script id="ftpl_accountNumber" type="text/x-kendo-tmpl">
+	<form class="filters">
+		<div class="mobileFiltericonMain">
+			<div class="mobileFiltericon"></div>
+			<span class="filterContains"></span>
+		</div>
+		<div class="filterOptions">
+			<ul>
+				<li class="sort"><a class="asc" href="javascript:" role="sortAsc"><span class="arrow-down"></span><span data-msgid=label.sortAZ.0001 data-test=label.sortAZ>Sort A to Z</span></a></li>
+				<li class="sort"><a class="desc"  href="javascript:" role="sortDesc"><span class="arrow-up"></span><span data-msgid=label.sortZA.0001 data-test=label.sortZA>Sort Z to A</span></a></li>
+				<li class="search"><input class="autocomplete" type="text" role="autocomplete" name="eq" value="#: contains#" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/data/accounts"/></li>
+			</ul>
+			<div class="btn-box">
+				<input type="button" value="Reset" data-msgid-button="button.reset.0001" data-test="button.reset" class="k-button grey size1 small" role="reset"/>
+				<input type="button" value="Apply" data-msgid-button="button.apply.0001" data-test="button.apply" class="k-button size1 small" role="apply"/>
+			</div>
+		</div>
+	</form>
+</script><script id="ftpl_group" type="text/x-kendo-tmpl">
+	<form class="filters">
+		<div class="mobileFiltericonMain">
+			<div class="mobileFiltericon"></div>
+			<span class="filterContains"></span>
+		</div>	
+		<div class="filterOptions">
+			<ul>
+				<li class="search"><input type="text" placeholder=" Search..." name="contains" value="#: contains#"/></li>
+				<li class="list"><span data-msgid=label.group.0001 data-test=label.group>Group</span> <div><select name="eq">
+											<option data-msgid-option="label.defaultGroup.0001" data-test="label.defaultGroup" value="Default Group">Default Group</option>
+									</select></div></li>
+			</ul>
+			<div class="btn-box">
+				<input type="button" value="Reset" data-msgid-button="button.reset.0001" data-test="button.reset" class="k-button grey size1 small" role="reset"/>
+				<input type="button" value="Apply" data-msgid-button="button.apply.0001" data-test="button.apply" class="k-button size1 small" role="apply"/>
+			</div>
+		</div>
+	</form>
+</script><script id="ftpl_string" type="text/x-kendo-tmpl">
+	<form class="filters">
+		<div class="mobileFiltericonMain">
+			<div class="mobileFiltericon"></div>
+			<span class="filterContains"></span>
+		</div>	
+		<div class="filterOptions">
+			<ul>
+				<li class="sort"><a href="javascript:" class="asc" role="sortAsc"><span class="arrow-down"></span><span data-msgid=label.sortAZ.0001 data-test=label.sortAZ>Sort A to Z</span></a></li>
+				<li class="sort"><a href="javascript:" class="desc" role="sortDesc"><span class="arrow-up"></span><span data-msgid=label.sortZA.0001 data-test=label.sortZA>Sort Z to A</span></a></li>
+				<li class="search"><input type="text" placeholder=" Search..." name="contains" value="#: contains#"/></li>
+			</ul>
+			<div class="btn-box">
+				<input type="button" value="Reset" data-msgid-button="button.reset.0001" data-test="button.reset" class="k-button grey size1 small" role="reset"/>
+				<input type="button" value="Apply" data-msgid-button="button.apply.0001" data-test="button.apply" class="k-button size1 small" role="apply"/>
+			</div>
+		</div>
+	</form>
+</script>
+<script id="ftpl_date" type="text/x-kendo-tmpl">
+	<form class="filters" id="#: field#">
+		<div class="mobileFiltericonMain">
+			<div class="mobileFiltericon"></div>
+			<span class="filterContains"></span>
+		</div>
+		<div class="filterOptions dateSearch">
+			<ul>
+				<li class="sort"><a href="javascript:" class="asc" role="sortAsc"><span class="arrow-down"></span><span data-msgid=label.earliestToLatest.0001 data-test=label.earliestToLatest>Sort Earliest to Latest</span></a></li>
+				<li class="sort"><a href="javascript:" class="desc" role="sortDesc"><span class="arrow-up"></span><span data-msgid=label.latestToEarliest.0001 data-test=label.latestToEarliest>Sort Latest to Earliest</span></a></li>
+			</ul>
+			<hr />
+
+							
+					
+					<input type="radio" id="age_#: field#_90" name="age" value="90" # if(age == "90"){# checked="checked" #}#/><label for="age_#: field#_90"><span data-msgid=lastNDays.1000 data-test=lastNDays>Last 90 Days</span></label><br /><div class="bottomspace"></div>  			
+						    				
+					
+					<input type="radio" id="age_#: field#_30" name="age" value="30" # if(age == "30"){# checked="checked" #}#/><label for="age_#: field#_30"><span data-msgid=lastNDays.1001 data-test=lastNDays>Last 30 Days</span></label><br /><div class="bottomspace"></div>  			
+						    				
+					
+					<input type="radio" id="age_#: field#_7" name="age" value="7" # if(age == "7"){# checked="checked" #}#/><label for="age_#: field#_7"><span data-msgid=lastNDays.1002 data-test=lastNDays>Last 7 Days</span></label><br /><div class="bottomspace"></div>  			
+						    			<input type="radio" id="ageAll_#: field#" name="age" value="all" # if(age == "all"){# checked="checked" #}#/><label for="ageAll_#: field#" ><span data-msgid=label.all.0001 data-test=label.all>All</span></label><br />
+			<div class="bottomspace"></div>
+			<div class="clearfix"></div>
+			<div class="filtererror" style="display: none;"></div>
+			<input type="radio" id="ageRange_#: field#" name="age" value="range" # if(age == "range"){# checked="checked" #}#/>
+			<label for="ageRange_#: field#"><span data-msgid=label.from.0001 data-test=label.from>From </span><span data-msgid=colon.0001 data-test=colon>:</span></label> 
+			<div class="date"><input name="from" type="hidden" value="#: from#"><input name="fromDisplay" value="#: from#" data-msgid-placeholder="label.mmddyyyy.0001" placeholder="mm/dd/yyyy" data-format="MM/dd/yyyy" /></div>
+			<div class="bottomspace"></div>
+			<label class="labelto" for="ageRange_#: field#"><span data-msgid=label.to.0001 data-test=label.to>To</span><span data-msgid=colon.0001 data-test=colon>:</span></label> 
+			<div class="date break"><input name="to" type="hidden" value="#: to#"><input name="toDisplay" value="#: to#" data-msgid-placeholder="label.mmddyyyy.0001" placeholder="mm/dd/yyyy" data-format="MM/dd/yyyy" /></div>
+			<div class="clearfix"></div>
+			<div class="btn-box">
+				<input type="button" value="Reset" data-msgid-button="button.reset.0001" data-test="button.reset" class="k-button grey size1 small" role="reset"/>
+				<input type="button" value="Apply" data-msgid-button="button.apply.0001" data-test="button.apply" class="k-button size1 small" role="apply"/>
+			</div>
+		</div>
+	</form>
+</script><script id="ftpl_billdate" type="text/x-kendo-tmpl">
+	<form class="filters" id="#: field#">
+		<div class="mobileFiltericonMain">
+			<div class="mobileFiltericon"></div>
+			<span class="filterContains"></span>
+		</div>
+		<div class="filterOptions dateSearch">
+			<ul>
+				<li class="sort"><a href="javascript:" class="asc" role="sortAsc"><span class="arrow-down"></span><span data-msgid=label.earliestToLatest.0001 data-test=label.earliestToLatest>Sort Earliest to Latest</span></a></li>
+				<li class="sort"><a href="javascript:" class="desc" role="sortDesc"><span class="arrow-up"></span><span data-msgid=label.latestToEarliest.0001 data-test=label.latestToEarliest>Sort Latest to Earliest</span></a></li>
+			</ul>
+			<hr />
+			
+							
+										<input type="radio" id="age_#: field#_120" class="age_#: field#_120" name="age" value="120" # if(age == "120"){# checked="checked" #}#/><label for="age_#: field#_120"><span data-msgid=lastNDays.1003 data-test=lastNDays>Last 120 Days</span></label><br /><div class="bottomspace"></div>
+                		    				
+									<input type="radio" id="age_#: field#_90" class="age_#: field#_90" name="age" value="90" # if(age == "90"){# checked="checked" #}#/><label for="age_#: field#_90"><span data-msgid=lastNDays.1004 data-test=lastNDays>Last 90 Days</span></label><br /><div class="bottomspace"></div>
+							    				
+									<input type="radio" id="age_#: field#_30" class="age_#: field#_30" name="age" value="30" # if(age == "30"){# checked="checked" #}#/><label for="age_#: field#_30"><span data-msgid=lastNDays.1005 data-test=lastNDays>Last 30 Days</span></label><br /><div class="bottomspace"></div>
+							    				
+									<input type="radio" id="age_#: field#_7" class="age_#: field#_7" name="age" value="7" # if(age == "7"){# checked="checked" #}#/><label for="age_#: field#_7"><span data-msgid=lastNDays.1006 data-test=lastNDays>Last 7 Days</span></label><br /><div class="bottomspace"></div>
+							    			<input type="radio" id="ageAll_#: field#" class="ageAll_#: field#" name="age" value="all" # if(age == "all"){# checked="checked" #}#/><label for="ageAll_#: field#" ><span data-msgid=label.all.0001 data-test=label.all>All</span></label><br />
+			<div class="bottomspace"></div>
+			<div class="clearfix"></div>
+			<div class="filtererror" style="display: none;"></div>
+			<input type="radio" id="ageRange_#: field#" name="age" value="range" # if(age == "range"){# checked="checked" #}#/>
+			<label for="ageRange_#: field#"><span data-msgid=label.from.0001 data-test=label.from>From </span><span data-msgid=colon.0001 data-test=colon>:</span></label> 
+			<div class="date"><input name="from" type="hidden" value="#: from#"><input name="fromDisplay" value="#: from#" data-msgid-placeholder="label.mmddyyyy.0001" placeholder="mm/dd/yyyy" data-format="MM/dd/yyyy" /></div>
+			<div class="bottomspace"></div>
+			<label class="labelto" for="ageRange_#: field#"><span data-msgid=label.to.0001 data-test=label.to>To</span><span data-msgid=colon.0001 data-test=colon>:</span></label> 
+			<div class="date break"><input name="to" type="hidden" value="#: to#"><input name="toDisplay" value="#: to#" data-msgid-placeholder="label.mmddyyyy.0001" placeholder="mm/dd/yyyy" data-format="MM/dd/yyyy" /></div>
+			<div class="clearfix"></div>
+			<div class="btn-box">
+				<input type="button" value="Reset" data-msgid-button="button.reset.0001" data-test="button.reset" class="k-button grey size1 small" role="reset"/>
+				<input type="button" value="Apply" data-msgid-button="button.apply.0001" data-test="button.apply" class="k-button size1 small" role="apply"/>
+			</div>
+		</div>
+	</form>
+</script>
+<script>
+	var screenWidth = $(window).width();
+	$(document).on('click touchstart', '#BillDate .k-button[role="apply"]', function(event) {
+		const $form = $('#BillDate');
+ 
+		// Ensure the correct radio button is selected
+		const $selectedRadio = $form.find('input[name="age"]:checked');
+		const selectedValue = $selectedRadio.val();
+		const data = { age: selectedValue };
+ 
+		if (selectedValue === 'range') {
+			let fromDate, toDate; // Declare variables outside the block to ensure proper scope
+			if(screenWidth <= 950 && isResponsive === 'Y') {
+				fromDate = kendo.toString(kendo.parseDate($form.find('input[name="fromDisplay"]').val().trim()), "MM/dd/yyyy");
+				toDate = kendo.toString(kendo.parseDate($form.find('input[name="toDisplay"]').val().trim()), "MM/dd/yyyy");
+			} else {
+				fromDate = $form.find('input[name="fromDisplay"]').val().trim();
+				toDate = $form.find('input[name="toDisplay"]').val().trim();
+			}
+			// Update hidden fields with the selected date values
+			$form.find('input[name="from"]').val(fromDate);
+			$form.find('input[name="to"]').val(toDate);
+
+			data.fromDate = fromDate;
+			data.toDate = toDate;
+		}
+		// Update the dropdown selected value for non-range options
+		if (selectedValue !== 'range') {
+			const selectedText = $selectedRadio.next('label').text();
+			$("#billDateDropDownSelectedValues").val(selectedText);
+		}
+		$(document).trigger("updateInvoiceFilters", data);
+	});
+
+	$(document).on('click touchstart', '#BillDate .filterOptions input[type="radio"], #BillDate .filterOptions label', function () {
+		const $radio = $(this).is('input[type="radio"]') ? $(this) : $(this).prev('input[type="radio"]');
+
+		if (screenWidth <= 950 && isResponsive === 'Y') {
+			$radio.prop('checked', true).trigger('click');
+		} else {
+			if (!$(this).is('input[type="radio"]')) {
+				$radio.prop('checked', true).trigger('click');
+			}
+		}
+		if ($radio.is(':checked')) {
+			const selectedText = $radio.next('label').text();
+			const selectedValue = $radio.val();
+
+			// Update the dropdown selected value
+			if(selectedValue != 'range') {
+				$("#billDateDropDownSelectedValues").val(selectedText);
+				$(".k-select").css("pointer-events", "none").attr("aria-disabled", "true");
+			} else {
+				$(".k-select").css("pointer-events", "auto").attr("aria-disabled", "false");
+				$("#BillDate form .filterOptions").find("input[name='fromDisplay']").each(function() {
+						var $this = $(this);
+						var datePicker = $this.data("kendoDatePicker");
+						if (!datePicker) {
+							$this.kendoDatePicker(); // Initialize Kendo DatePicker if not already initialized
+						}
+						$this.prop('disabled', false).attr('aria-disabled', 'false');
+						if (datePicker) {
+							datePicker.enable(true);
+						}
+					});
+				$("#BillDate form .filterOptions").find("input[name='toDisplay']").each(function() {
+					var $this = $(this);
+					var datePicker = $this.data("kendoDatePicker");
+					if (!datePicker) {
+						$this.kendoDatePicker(); // Initialize Kendo DatePicker if not already initialized
+					}
+					$this.prop('disabled', false).attr('aria-disabled', 'false');
+					if (datePicker) {
+						datePicker.enable(true);
+					}
+				});
+				$("#popupWindow form .filterOptions").find("input[name='fromDisplay']").each(function() {
+						var $this = $(this);
+						var datePicker = $this.data("kendoDatePicker");
+						if (!datePicker) {
+							$this.kendoDatePicker(); // Initialize Kendo DatePicker if not already initialized
+						}
+						$this.prop('disabled', false).attr('aria-disabled', 'false');
+						if (datePicker) {
+							datePicker.enable(true);
+						}
+					});
+				$("#popupWindow form .filterOptions").find("input[name='toDisplay']").each(function() {
+						var $this = $(this);
+						var datePicker = $this.data("kendoDatePicker");
+						if (!datePicker) {
+							$this.kendoDatePicker(); // Initialize Kendo DatePicker if not already initialized
+						}
+						$this.prop('disabled', false).attr('aria-disabled', 'false');
+						if (datePicker) {
+							datePicker.enable(true);
+						}
+					});
+				var toDate = $("#BillDate input[name='toDisplay']").val();
+				var fromDate = $("#BillDate input[name='fromDisplay']").val();
+				if(toDate != '' && fromDate != '') {
+					fromDate = $("#BillDate input[name='fromDisplay']").val().trim();
+					toDate = $("#BillDate input[name='toDisplay']").val().trim();
+					$("#billDateDropDownSelectedValues").val(fromDate + ' - ' + toDate);
+					$("#popupWindow form .filterOptions").find("input[name='fromDisplay']").each(function() {
+						var $this = $(this);
+						var datePicker = $this.data("kendoDatePicker");
+						if (!datePicker) {
+							$this.kendoDatePicker(); // Initialize Kendo DatePicker if not already initialized
+						}
+						$this.prop('disabled', false).attr('aria-disabled', 'false');
+						if (datePicker) {
+							datePicker.enable(true);
+						}
+						$this.val(fromDate); // Explicitly set the input value
+						datePicker.value(fromDate); // Update the kendoDatePicker value
+					});
+					$("#popupWindow form .filterOptions").find("input[name='toDisplay']").each(function() {
+						var $this = $(this);
+						var datePicker = $this.data("kendoDatePicker");
+						if (!datePicker) {
+							$this.kendoDatePicker(); // Initialize Kendo DatePicker if not already initialized
+						}
+						$this.prop('disabled', false).attr('aria-disabled', 'false');
+						if (datePicker) {
+							datePicker.enable(true);
+						}
+						$this.val(toDate); // Explicitly set the input value
+						datePicker.value(toDate); // Update the kendoDatePicker value
+					});
+				} else {
+                    $("#billDateDropDownSelectedValues").val('').attr('placeholder','Select from and to date');
+				}
+
+		}
+
+        // Ensure all matching radio buttons are checked
+        $('#popupWindow form .filterOptions').find('input[type="radio"]').each(function () {
+            if (selectedValue === $(this).val()) {
+                $(this).prop('checked', true);
+            }
+        });
+    }
+});
+
+</script><script id="ftpl_numeric" type="text/x-kendo-tmpl">
+	<form class="filters">
+	<div class="filterOptions"></div>
+		<div class="mobileFiltericon"></div>
+		<div class="filterOptions">
+			<ul>
+				<li class="sort"><a href="javascript:" class="asc" role="sortAsc"><span class="arrow-down"></span><span data-msgid=label.smallestToLargest.0001 data-test=label.smallestToLargest>Smallest to Largest</span></a></li>
+				<li class="sort"><a href="javascript:" class="desc" role="sortDesc"><span class="arrow-up"></span><span data-msgid=label.largestToSmallest.0001 data-test=label.largestToSmallest>Largest to Smallest</span></a></li>
+				<li class="search"><input type="text" placeholder=" Search..." name="contains" value="#: contains#"/></li>
+			</ul>
+			<div class="btn-box">
+				<input type="button" value="Reset" data-msgid-button="button.reset.0001" data-test="button.reset" class="k-button grey size1 small" role="reset"/>
+				<input type="button" value="Apply" data-msgid-button="button.apply.0001" data-test="button.apply" class="k-button size1 small" role="apply"/>
+			</div>
+		</div>
+	</form>
+</script>
+<script id="ftpl_autoComplete" type="text/x-kendo-tmpl">
+	<form class="filters">
+		<div class="mobileFiltericonMain">
+			<div class="mobileFiltericon"></div>
+			<span class="filterContains"></span>
+		</div>
+		<div class="filterOptions">
+			<ul>
+				<li class="sort"><a class="asc" href="javascript:" role="sortAsc"><span class="arrow-down"></span><span data-msgid=label.sortAZ.0001 data-test=label.sortAZ>Sort A to Z</span></a></li>
+				<li class="sort"><a class="desc" href="javascript:" role="sortDesc"><span class="arrow-up"></span><span data-msgid=label.sortZA.0001 data-test=label.sortZA>Sort Z to A</span></a></li>
+				<li class="search"><input class="autocomplete" type="text" role="autocomplete" name="contains" value="#: contains#" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/data/auto-complete"/></li>
+			</ul>
+			<div class="btn-box">
+				<input type="button" value="Reset" data-msgid-button="button.reset.0001" data-test="button.reset" class="k-button grey size1 small" role="reset"/>
+				<input type="button" value="Apply" data-msgid-button="button.apply.0001" data-test="button.apply" class="k-button size1 small" role="apply"/>
+			</div>
+		</div>
+	</form>
+</script><script id="BillDateHeaderForm" type="text/x-kendo-tmpl">
+    <form class="filters">
+        <div class="mobileFiltericonMain">
+            <div class="mobileFiltericon"></div>
+            <span class="filterContains"></span>
+        </div>
+        <div class="filterOptions dateSearch">            
+                                                <input type="radio" id="age_BillDate_120" class="age_BillDate_120"name="age" value="120"  checked=checked /><label for="age_BillDate_120"><span data-msgid=lastNDays.1007 data-test=lastNDays>Last 120 Days</span></label><br /><div class="bottomspace"></div>
+                                                                <input type="radio" id="age_BillDate_90" class="age_BillDate_90" name="age" value="90"  /><label for="age_BillDate_90"><span data-msgid=lastNDays.1008 data-test=lastNDays>Last 90 Days</span></label><br /><div class="bottomspace"></div>
+                                                                <input type="radio" id="age_BillDate_30" class="age_BillDate_30" name="age" value="30"  /><label for="age_BillDate_30"><span data-msgid=lastNDays.1009 data-test=lastNDays>Last 30 Days</span></label><br /><div class="bottomspace"></div>
+                                                                <input type="radio" id="age_BillDate_7" class="age_BillDate_7" name="age" value="7"  /><label for="age_BillDate_7"><span data-msgid=lastNDays.1010 data-test=lastNDays>Last 7 Days</span></label><br /><div class="bottomspace"></div>
+                                        <input type="radio" id="ageAll_BillDate" class="ageAll_BillDate" name="age" value="all"  /><label for="ageAll_BillDate" ><span data-msgid=label.all.0001 data-test=label.all>All</span></label><br />
+            <div class="bottomspace"></div>
+            <div class="clearfix"></div>
+            <div class="header-filter-error" style="display: none;"></div>
+            <input type="radio" id="ageRange_BillDate" name="age" value="range" />
+            <label for="ageRange_BillDate"><span data-msgid=label.from.0001 data-test=label.from>From </span><span data-msgid=colon.0001 data-test=colon>:</span></label> 
+            <div class="date"><input name="from" type="hidden" value=""><input name="fromDisplay" value="" data-msgid-placeholder="label.mmddyyyy.0001" placeholder="mm/dd/yyyy" data-format="MM/dd/yyyy" disabled="disabled" /></div>
+            <div class="bottomspace"></div>
+            <label class="labelto" for="ageRange_BillDate"><span data-msgid=label.to.0001 data-test=label.to>To</span><span data-msgid=colon.0001 data-test=colon>:</span></label> 
+            <div class="date break"><input name="to" type="hidden" value=""><input name="toDisplay" value="" data-msgid-placeholder="label.mmddyyyy.0001" placeholder="mm/dd/yyyy" data-format="MM/dd/yyyy" disabled="disabled" /></div>
+            <div class="clearfix"></div>
+            <div class="btn-box">
+                <input type="button" value="Apply" data-msgid-button="button.apply.0001" data-test="button.apply" class="k-button size1 small" role="apply" style="float: right" />
+            </div>
+        </div>
+    </form>
+</script>
+<script type="text/javascript">    
+    $(document).ready(function() {
+        var screenWidth = $(window).width();
+                var formHtml = $("#BillDateHeaderForm").html(); 
+        $clickTimes =1;   
+        var popupHtml = `<div class="k-popup k-group k-reset i-columnmenu k-state-border-up" data-role="popup" style="position: absolute;display: block; font-family: arial, Verdana, sans-serif; font-stretch: 100%; font-style: normal; font-weight: 400; line-height: normal; border-radius: 5px;" data-field="BillDate" id="popupWindow">${formHtml}</div>`;  
+        var _visible = $("#formContainer").append(popupHtml);
+        $(".headerDropdownFilter").on("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            // Position #formContainer relative to #dropdownlistDateFilter
+            var dropdown = $("#dropdownlistDateFilter");
+            var formContainer = $("#formContainer");
+            if (window.innerWidth <= 950) { // Mobile responsiveness
+                formContainer.css({
+                    position: "absolute",
+                    left: "17px",
+                    zIndex: 9999,
+                    transform: "translateY(45px)",
+                    width: "90%", // Adjust width for mobile
+                    margin: "0 auto", // Center align
+                });
+            } else {
+                formContainer.css({
+                    position: "absolute",
+                    left: dropdown.offset().left - 32,
+                    zIndex: 9999,
+                    transform: "translateY(38px)",
+                    width: 300,
+                });
+            }
+
+            if($clickTimes == 1){
+                _visible.show();               
+                $clickTimes = 2;
+            }else{
+                _visible.hide();
+                $clickTimes = 1;
+            }
+            $('#popupWindow form .filterOptions input[type="radio"]').on('click touchstart',function(){
+                $("#popupWindow form").find('.header-filter-error').hide();
+                if($(this).is(':checked') && $(this).val() != 'range') {
+                    var a = $(this).next().text();
+                    $("#billDateDropDownSelectedValues").val(a);
+                    $("#popupWindow form .filterOptions input[name='toDisplay'],#popupWindow form .filterOptions input[name='fromDisplay']")
+                        .prop('disabled', true)
+                        .attr('aria-disabled', 'true');         
+                     $("#popupWindow form .filterOptions .k-select").css("pointer-events", "none").attr("aria-disabled", "true");
+                    $('#BillDate').find("#"+$(this).attr('id')).trigger('click');                    
+                } else {
+                    $("#popupWindow form .filterOptions .k-select").css("pointer-events", "auto").attr("aria-disabled", "false");
+                    $("#popupWindow form .filterOptions input[name='toDisplay'], #popupWindow form .filterOptions input[name='fromDisplay']")
+                        .prop('disabled', false)
+                        .attr('aria-disabled', 'false')
+                        .each(function() {
+                            var datePicker = $(this).data("kendoDatePicker");
+                            if (datePicker) {
+                                datePicker.enable(true);
+                            }
+                        });
+
+                    // Ensure the date pickers are properly initialized and enabled
+                    if (fromPicker) fromPicker.enable(true);
+                    if (toPicker) toPicker.enable(true);
+                    $("#BillDate").find("#ageRange_BillDate").trigger('click');
+                }
+            });                                  
+        });
+        $('#popupWindow form .filterOptions').find('input[type="radio"]').each(function(){
+            if($(this).is(':checked') ) {
+                var a = $(this).next().text();
+                $("#billDateDropDownSelectedValues").val(a);
+            }
+        });
+        window.__autoTriggeringPaydate = true;
+                    $(".grid-table-responsive .k-grid-header").find("[data-msgid='co.BillDate']").trigger('click').trigger('click');
+                _visible.hide();
+
+        // Kendo Date pickers and date range display
+        var fromPicker = $("#popupWindow form .filterOptions input[name='fromDisplay']").kendoDatePicker({
+            change: onFromChange,
+            format: "MM/dd/yyyy",
+            min: new Date(1900, 0, 1)
+            }).data("kendoDatePicker");
+
+        var toPicker = $("#popupWindow form .filterOptions input[name='toDisplay']").kendoDatePicker({
+            change: onToChange,
+            format: "MM/dd/yyyy",
+            min: new Date(1900, 0, 1)
+            }).data("kendoDatePicker");
+
+        function onFromChange() {
+            try {
+                var fromDate = fromPicker.value();
+                var toDate = toPicker.value();
+                var errorElement = $("#popupWindow form").find('.header-filter-error');
+                
+                if (fromDate) {
+                    // If fromDate is selected, only update min date, leaving max unlimited
+                    toPicker.min(fromDate);
+                    
+                    if (toDate && toDate < fromDate) {
+                        // Clear toDate if it's before fromDate
+                        toPicker.value(null);
+                        errorElement.html('* ' + TS('error.enteredInvalidDate')).show();
+                    } else {
+                        errorElement.hide();
+                    }
+                } else {
+                    // If fromDate is cleared, reset min date to allow past dates
+                    toPicker.min(new Date(1900, 0, 1));
+                    errorElement.hide();
+                }
+            } catch (e) {
+                console.error('Error in onFromChange:', e);
+            }
+        }
+
+        function onToChange() {
+            try {
+                var fromDate = fromPicker.value();
+                var toDate = toPicker.value();
+                
+                // Clear any existing errors first
+                var errorElement = $("#popupWindow form").find('.header-filter-error');
+                errorElement.hide();
+
+                // If no dates are selected, just return
+                if (!fromDate && !toDate) {
+                    return;
+                }
+
+                // If fromDate is empty, allow any toDate selection
+                if (!fromDate) {
+                    return;
+                }
+
+                // If both dates are present, compare them using kendo date parsing
+                if (fromDate && toDate) {
+                    // Ensure we're working with Kendo Date objects
+                    var fromKendoDate = kendo.parseDate(kendo.toString(fromDate, fromPicker.options.format));
+                    var toKendoDate = kendo.parseDate(kendo.toString(toDate, toPicker.options.format));
+                    
+                    if (!fromKendoDate || !toKendoDate) {
+                        toPicker.value(null);
+                        errorElement.html('* ' + TS('error.enteredInvalidDate')).show();
+                        return;
+                    }
+
+                    if (toKendoDate < fromKendoDate) {
+                        toPicker.value(null);
+                        errorElement.html('* ' + TS('error.enteredInvalidDate')).show();
+                    }
+                }
+            } catch (e) {
+                console.error('Error in onToChange:', e);
+                toPicker.value(null);
+            }
+        }
+
+    // Handle Clear Filters button - moved outside apply button handler
+    $(".resetAllButton").on('click', function() {
+        if(fromPicker) {
+            fromPicker.value(null);
+            // Reset fromPicker to allow all dates
+            fromPicker.min(new Date(1900, 0, 1));
+            fromPicker.enable(true);
+        }
+        if(toPicker) {
+            toPicker.value(null);
+            // Reset toPicker to allow all dates
+            toPicker.min(new Date(1900, 0, 1));
+            toPicker.enable(true);
+        }
+        // Clear any error messages
+        $("#popupWindow form").find('.header-filter-error').hide();
+        // Reset the display value
+        $("#billDateDropDownSelectedValues").val('');
+    });
+
+    $("#popupWindow form .filterOptions .btn-box input[role='apply']").on('click',function(){
+        var form = $("#popupWindow form");
+        var formData = form.serializeArray();
+        $clickTimes = 1;
+
+        if(screenWidth <= 950 && isResponsive === 'Y') {      
+            var rawFromDate = form.find('input[name="fromDisplay"]').val().trim();
+            var rawToDate = form.find('input[name="toDisplay"]').val().trim();
+            var fromDate = rawFromDate === '' ? null : rawFromDate;
+            var toDate = rawToDate === '' ? null : rawToDate;
+        } else {
+            var fromDate = fromPicker ? fromPicker.value() : null;
+            var toDate = toPicker ? toPicker.value() : null;
+        }
+
+        var selectedAge = $("#popupWindow form .filterOptions input[type='radio']:checked").val();
+        if((fromDate==null || toDate==null) && selectedAge=='range') {
+            form.find('.header-filter-error').html('* '+TS('error.enteredInvalidDate')).show();
+            return;
+        }
+        // Then check if the date range is valid
+        var fromDateObj = new Date(fromDate);
+        var toDateObj = new Date(toDate);
+        if(fromDateObj > toDateObj && selectedAge=='range') {
+            form.find('.header-filter-error').html('* '+TS('error.enteredInvalidDate')).show();
+            return;
+        }
+        form.find('.header-filter-error').hide();
+        if(fromDate!=null && toDate!=null && selectedAge=='range') {           
+            if(screenWidth <= 950 && isResponsive === 'Y') {                
+                $("#billDateDropDownSelectedValues").val(rawFromDate + ' - ' + rawToDate);
+                $("#BillDate").find("input[name='from']").val(fromDate);
+                $("#BillDate").find("input[name='fromDisplay']").val(kendo.toString(kendo.parseDate(fromDate, "MM/dd/yyyy"), "yyyy-MM-dd"));            
+                $("#BillDate").find("input[name='to']").val(toDate);
+                $("#BillDate").find("input[name='toDisplay']").val(kendo.toString(kendo.parseDate(toDate, "MM/dd/yyyy"), "yyyy-MM-dd"));                        
+            } else {
+                var toDisplay = $("#popupWindow form .filterOptions input[name='toDisplay']").val();
+                var fromDisplay = $("#popupWindow form .filterOptions input[name='fromDisplay']").val();
+                $("#billDateDropDownSelectedValues").val(fromDisplay + ' - ' + toDisplay);               
+                $("#BillDate").find("input[name='from']").val(fromDisplay);
+                $("#BillDate").find("input[name='fromDisplay']").val(fromDisplay);            
+                $("#BillDate").find("input[name='to']").val(toDisplay);
+                $("#BillDate").find("input[name='toDisplay']").val(toDisplay);            
+            }
+        }        
+        _visible.hide();
+
+        // Trigger the filter apply button click
+        $("#BillDate").find(".filterOptions .btn-box input[role='apply']").trigger('click');
+    });
+    
+    // Reset the filter Data
+    $(document).on("updateInvoiceFilters", function(event, filters) {
+        const $form = $("#popupWindow form");
+        $form.find("input[name='age']").prop("checked", false);
+        let fromDate , toDate , label;
+        if (filters.age === 'range' && filters.fromDate && filters.toDate) {            
+            $form.find("input[name='age'][value='range']").prop("checked", true);
+            if(screenWidth <= 950 && isResponsive === 'Y') {
+                fromDate = filters.fromDate ? kendo.parseDate(filters.fromDate, "MM/dd/yyyy") : null;
+                toDate = filters.toDate ? kendo.parseDate(filters.toDate, "MM/dd/yyyy") : null;
+                $form.find("input[name='fromDisplay']").data("kendoDatePicker").value(fromDate);
+                $form.find("input[name='toDisplay']").data("kendoDatePicker").value(toDate);
+                $form.find("input[name='from']").val(fromDate);
+                $form.find("input[name='to']").val(toDate);
+                label = kendo.toString(fromDate, "MM/dd/yyyy") + ' - ' + kendo.toString(toDate, "MM/dd/yyyy");           
+                fromDate = fromDate;
+                toDate = toDate;
+            } else {
+                fromDate = filters.fromDate ? kendo.parseDate(filters.fromDate, "MM/dd/yyyy") : null;
+                toDate = filters.toDate ? kendo.parseDate(filters.toDate, "MM/dd/yyyy") : null;
+                $form.find("input[name='fromDisplay']").data("kendoDatePicker").value(filters.fromDate);
+                $form.find("input[name='toDisplay']").data("kendoDatePicker").value(filters.toDate);
+                $form.find("input[name='from']").val(filters.fromDate);
+                $form.find("input[name='to']").val(filters.toDate);
+                label = kendo.toString(filters.fromDate, "MM/dd/yyyy") + ' - ' + kendo.toString(filters.toDate, "MM/dd/yyyy");           
+                fromDate = filters.fromDate;
+                toDate = filters.toDate;
+            }          
+
+            if(fromDate==null || toDate==null) {
+                $form.find('.header-filter-error').html('* '+TS('error.enteredInvalidDate')).show();
+                $("#billDateDropDownSelectedValues").val('');
+                return;
+            }
+            $form.find('.header-filter-error').hide();
+            $("#billDateDropDownSelectedValues").val(label);
+
+        } else {
+            $form.find(`input[name='age'][value="${filters.age}"]`).prop("checked", true);
+            const labelText = $form.find(`input[name='age'][value="${filters.age}"]`).next("label").text();
+            $("#billDateDropDownSelectedValues").val(labelText);
+        }
+    });
+        var visibleChildren = $('.summaryDiv .filterBox:visible');
+            var  visibleMobileChildren = $('.mobileSummaryDiv .mobileFilterBox:visible');
+            if ((visibleMobileChildren.length !== 0 || visibleChildren.length !== 0) ) {
+                var selectedLabel = "All";
+                var selectedCheckboxId = "#ageAll_BillDate"
+                var selectedCheckbox = $(selectedCheckboxId);
+                selectedCheckbox.prop("checked", true);
+                $("#billDateDropDownSelectedValues").val(selectedLabel);
+            }
+
+        // Should restrict the spaces and special characters in the date field, But allow backspace, delete, and arrow keys
+        $("#popupWindow form .filterOptions input[name='fromDisplay'], #popupWindow form .filterOptions input[name='toDisplay']").on('keydown', function(e) {
+            const invalidChars = /[^0-9\/\-]/; // Allow only numbers and slashes
+            const allowedKeys = [8, 46, 37, 38, 39, 40]; // Backspace, Delete, Arrow keys
+            if (e.keyCode === 32 || (invalidChars.test(e.key) && !allowedKeys.includes(e.keyCode))) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>
+<script id="dialogEntireInvoiceTemplate" type="text/x-kendo-tmpl" data-width="1000" data-height="475"
+        data-title= "<span data-msgid=label.DisputeInvoiceTitle.0001 data-test=label.DisputeInvoiceTitle>Dispute Invoice</span> \##: invoiceNumber#" data-container="igAddComment" data-animation="true" >
+    <div class="i-dialog-content">
+                <form id="formIgOpenSpecialDispute" enctype="multipart/form-data" method="post" action="">
+
+    <input id="spDisputeDocumentId" name="spDisputeDocumentId" type="hidden" value="#: documentId#" />    <input id="spInvoiceNumber" name="spInvoiceNumber" type="hidden" value="#: invoiceNumber#" />
+    <input id="spLoginContactName" name="spLoginContactName" type="hidden" value="Kenneth Longoria"  id="spLoginContactName"/>    <input id="spLoginContactEmail" name="spLoginContactEmail" type="hidden" value="klongoria@comcast.net"  id="spLoginContactEmail"/>        <input id="spDisputePONumber" name="spDisputePONumber" type="hidden" value="#: poNumber#" />
+    <div class="clearfix"></div>
+
+    <fieldset class="disputeSectionOne">
+                <label for="spDisputeAgainst"><span data-msgid=label.DisputeAgainstLabel.0001 data-test=label.DisputeAgainstLabel>Dispute Against</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <select name="spDisputeAgainst"  id="spDisputeAgainst" tabindex="1" data-role="dropdownlist" data-template="selectOptionTemplate" data-value-template="selectOptionTemplate" required=""><option value="label.DisputeInvoice" selected  data-msgid-option=label.DisputeInvoice.0001 data-test=label.DisputeInvoice><span data-msgid=label.DisputeInvoice.0001 data-test=label.DisputeInvoice>Dispute Invoice</span></option>
+<option value="label.DisputeLineItem" data-msgid-option=label.DisputeLineItem.0001 data-test=label.DisputeLineItem><span data-msgid=label.DisputeLineItem.0001 data-test=label.DisputeLineItem>Dispute Line Item</span></option>
+</select>        </div>
+        <div class="clearfix"></div>
+
+                <div class="disputetxtalign"><label for="spDisputeAmount"><span data-msgid=label.TotalInvoiceAmountLabel.0001 data-test=label.TotalInvoiceAmountLabel>Total Invoice Amount</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+        <div class="textAlignLeft">#: totalDue#</div>
+        <div class="clearfix"></div>
+
+                <div class="disputetxtalign"><label for="spDisputeBillDate"><span data-msgid=label.BillDateLabel.0001 data-test=label.BillDateLabel>Bill Date</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+        <div class="textAlignLeft">#: billDate#</div>
+
+        <div class="clearfix"></div>
+
+        <div class="disputetxtalign"><label for="spDisputeAmount"><span data-msgid=label.AmountDisputedLabel.0001 data-test=label.AmountDisputedLabel>Amount Disputed</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+        <div class="textAlignLeft">#: totalDue#</div>
+        <div class="clearfix"></div>
+
+                                <label for="spDisputeReason"><span data-msgid=label.ReasonsforDisputesLabel.0001 data-test=label.ReasonsforDisputesLabel>Reason for Dispute</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+            <div class="input">
+                <select name="spDisputeReason"  id="spDisputeReason" tabindex="4" data-role="dropdownlist" data-init="reasonInit" data-other-reason="otherReason" required=""><option value="" selected >Please select a reason for your dispute</option>
+</select>            </div>
+            <div class="clearfix"></div>
+        
+        
+        <div id="otherReason" style="display: none;">
+                        <label for="spDisputeReasonOther"><span data-msgid=label.ReasonsforDisputesLabel.0001 data-test=label.ReasonsforDisputesLabel>Reason for Dispute</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+            <div class="input">
+                <input name="spDisputeReasonOther" type="text" value=""  id="spDisputeReasonOther" class="k-textbox" autocomplete="off" tabindex="5" maxlength="200" disabled="disabled" required=""/>            </div>
+            <div class="clearfix"></div>
+        </div>
+
+                <label for="spDisputeComment"><span data-msgid=label.AddCommentsLabel.0001 data-test=label.AddCommentsLabel>Add Comments</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="spDisputeComment" type="text" value=""  id="spDisputeComment" class="k-textbox" autocomplete="off" tabindex="6" maxlength="200" data-role="igtooltip" data-content="&lt;span data-msgid=enterDisputeComment.0001 data-test=enterDisputeComment&gt;Enter a comment for this dispute&lt;/span&gt;" placeholder="Optional Comments"/>        </div>
+        <div class="clearfix"></div>
+
+
+                <div class="disputeAttachmentLabel WebTitle" ><label for="spDisputeAttachment"><span data-msgid=label.AttachDocLabel.0001 data-test=label.AttachDocLabel>Attach Documentation</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+        <div class="input disputeAttachmentDiv">
+            <label class="disputeAttachmentLabel disputeAttachmentMobileTitle" for="spDisputeAttachment"><span data-msgid=label.AttachDocLabel.0001 data-test=label.AttachDocLabel>Attach Documentation</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+            <div class="disputeAttachmentFiles">
+                <input name="files" id="files" type="file" class="disputeFileBtn" title="No File Chosen" data-msgid-button="BrowseBtnToolTipNoFileChosen.0001" data-test="BrowseBtnToolTipNoFileChosen"/>
+            </div>
+        </div>
+        <div id="dialog">
+        </div>
+        <div class="clearfix"></div>
+    </fieldset>
+    <div class="fullInvoiceDisputeSplit"></div>
+    <fieldset class="disputeSectionTwo" >
+        <div style="font-size:18px; font-weight:bold;"><span data-msgid=label.WhoContactDisputeTitle.0001 data-test=label.WhoContactDisputeTitle>Who to Contact about this dispute?</span></div><br>
+        <div><span data-msgid=label.DisputeContactDisc.0001 data-test=label.DisputeContactDisc>Please provide a contact we can reach out to for answering questions about this dispute</span></div><br>
+                <label  class="labeldispute" for="spDisputeCustContactName"><span data-msgid=label.ContactNameLabel.0001 data-test=label.ContactNameLabel>Contact Name</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="spDisputeCustContactName" type="text" value=""  id="spDisputeCustContactName" tabindex="8" class="k-textbox" autocomplete="off" data-role="igtooltip" data-content="&lt;span data-msgid=enterYourName.0001 data-test=enterYourName&gt;Enter your first and last name here.&lt;/span&gt;" placeholder="Full Name" required=""/>        </div>
+        <div class="clearfix"></div>
+
+                <label class="labeldispute" for="spDisputeCustContactPhone"><span data-msgid=label.ContactPhoneLabel.0001 data-test=label.ContactPhoneLabel>Contact Phone</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="spDisputeCustContactPhone" type="text" value=""  id="spDisputeCustContactPhone" tabindex="9" class="k-textbox" autocomplete="off" data-role="igtooltip" data-content="&lt;span data-msgid=enterPhoneNumber.0001 data-test=enterPhoneNumber&gt;Enter a phone number in which we can contact you regarding the dispute of this bill if we have any questions. It should be in the format of xxx-xxx-xxxx.&lt;/span&gt;" placeholder="(xxx) xxx-xxxx" required=""/>        </div>
+        <div class="clearfix"></div>
+
+                <label  class="labeldispute" for="spDisputeCustContactEmail"><span data-msgid=label.ContactEmailLabel.0001 data-test=label.ContactEmailLabel>Contact Email</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="spDisputeCustContactEmail" type="email" value=""  helper="formText" id="spDisputeCustContactEmail" tabindex="10" class="k-textbox" autocomplete="off" data-role="igtooltip" data-content="&lt;span data-msgid=enterYourEmail.dispute.0001 data-test=enterYourEmail.dispute&gt;Enter an email address in which we can contact you regarding the dispute of this bill if we have any questions.&lt;/span&gt;" placeholder="email@domain.com" required=""/>        </div>
+        <div class="clearfix"></div>
+        <div class="createDisputeBtn">
+            <input id="disputeOwnerBtn" type="button" class="disputeOwner" value="I am the contact for this dispute" data-msgid-button="label.DisputeContactBtn.0001" data-test="label.DisputeContactBtn"
+                   data-role="igdialog"
+                   data-click="disputeOwnerPreFill"
+                   data-context="managedAutopay">
+        </div>
+    </fieldset>
+</form>
+
+    </div>
+    <div class="igAddEntireDispute">
+        <button type="submit" class="disputeActButton-spinner" data-spinner="true" data-role="igdialog" id="createEntireDisputeBtn" data-click="submitEntireInvoiceDispute">
+            <i class="fa fa-spinner fa-spin fa-spinner-create-dispute"></i> <span data-msgid=label.CreateDisputeBtn.0001 data-test=label.CreateDisputeBtn>Create Dispute</span> #: totalDue#
+        </button>
+    </div>
+
+</script>
+<script id="selectOptionTemplate" type="text/x-kendo-tmpl">#= TS(value)#</script>
+<script id="dialogDisputeDetails" type="text/x-kendo-tmpl" data-width="1000" data-height="475"
+        data-title= "<span data-msgid=label.DisputeInvoiceTitle.0001 data-test=label.DisputeInvoiceTitle>Dispute Invoice</span> \##: invoiceNumber#" data-container="igAddComment" data-animation="false" >
+    <div class="i-dialog-content">
+                <form id="formIgDisputeDetails" enctype="application/x-www-form-urlencoded" method="post" action="">
+    <input id="spDisputeDocumentId" name="spDisputeDocumentId" type="hidden" value="0" />    <input id="spDocumentId" name="spDocumentId" type="hidden" value="0" />    <div class="clearfix"></div>
+
+    <div id="loading"><br><br><br><br><br><br><center><img src="/IG70/img/ajax-spinner.gif" /></center></div>
+    <div id="details" style="display:none;">
+        <fieldset class="disputeSectionOne">
+            <div class="disputetxtalign"><label class="font-weight-bold"><span data-msgid=label.DisputeAgainstLabel.0001 data-test=label.DisputeAgainstLabel>Dispute Against</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div id="disputeAgainst" class="input disputeStatusRight text-right">
+                <span data-msgid=DisputeEntireInvoice.0001 data-test=DisputeEntireInvoice>Entire Invoice</span>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign" id="disputeEntireAmountLabel"><label class="font-weight-bold" for="spTotalAmount"><span data-msgid=label.TotalInvoiceAmountLabel.0001 data-test=label.TotalInvoiceAmountLabel>Total Invoice Amount</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="disputetxtalign" id="disputeLineAmountLabel" style="display: none"><label class="font-weight-bold" for="spTotalAmount"><span data-msgid=label.DisputeTotalLineItem.0001 data-test=label.DisputeTotalLineItem>Total Line Item Amount</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeSpaceRight">
+                <input name="spTotalAmount" type="text" value=""  id="spTotalAmount" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeDate"><span data-msgid=label.DateDisputedLabel.0001 data-test=label.DateDisputedLabel>Date Disputed</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeDate" type="text" value=""  id="spDisputeDate" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeAmount"><span data-msgid=label.AmountDisputedLabel.0001 data-test=label.AmountDisputedLabel>Amount Disputed</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeSpaceRight">
+                <input name="spDisputeAmount" type="text" value=""  id="spDisputeAmount" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeReasonFF"><span data-msgid=label.ReasonsforDisputesLabel.0001 data-test=label.ReasonsforDisputesLabel>Reason for Dispute</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeSpaceRight">
+                <input name="spDisputeReasonFF" type="text" value=""  id="spDisputeReasonFF" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeComment"><span data-msgid=label.CommentsLabel.0001 data-test=label.CommentsLabel>Comments</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <textarea name="spDisputeComment"  helper="formTextarea" id="spDisputeComment" readonly="true" disabled="disabled" class="k-textbox no-border text-right"></textarea>            </div>
+
+            <div class="clearfix"></div>
+            <div id="documentationDiv" class="disputeAttachmentLabel WebTitle"><label class="font-weight-bold" for="documentation"><span data-msgid=label.DocumentationLabel.0001 data-test=label.DocumentationLabel>Documentation</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAttachmentDiv disputeDetailsBrowseBtn">
+                <label class="font-weight-bold disputeAttachmentLabel disputeAttachmentMobileTitle" for="documentation"><span data-msgid=label.DocumentationLabel.0001 data-test=label.DocumentationLabel>Documentation</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+                <div class="disputeAttachmentFiles">
+                    <input name="files" id="files-details" type="file"  title="No File Chosen" data-msgid-button="BrowseBtnToolTipNoFileChosen.0001" data-test="BrowseBtnToolTipNoFileChosen"/>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div id="loadingAttachments" style="display: none"><center><img src="/IG70/img/ajax-spinner.gif" /></center></div>
+            <div id="disputeDocumentation" class="input disputeAlignRight" style="padding-left: 4px;"></div>
+            <div id="disputeDocumentationFailed" class="input disputeAlignRight" ></div>
+        </fieldset>
+        <div class="fullInvoiceDisputeSplit"></div>
+        <fieldset class="disputeSectionTwo">
+
+            <div style="font-size: 18px;font-weight: bold; padding-bottom: 18px;">
+                <span data-msgid=label.DisputeDetailsTitle.0001 data-test=label.DisputeDetailsTitle>Dispute Details</span>            </div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeCode"><span data-msgid=label.DisputeIDLabel.0001 data-test=label.DisputeIDLabel>Dispute ID</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeCode" type="text" value=""  id="spDisputeCode" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfixDetails"></div>
+            <div id="resolution-block" style="display: none;">
+                                <div id="approved-amount-block" style="display: none;">
+                    <div class="disputetxtalign"><label class="font-weight-bold" for="spDetailsApprovedAmount"><span data-msgid=label.ApprovedAmountLabel.0001 data-test=label.ApprovedAmountLabel>Approved Amount</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+                    <div class="input disputeAlignRight">
+                        <input name="spDetailsApprovedAmount" type="text" value=""  id="spDetailsApprovedAmount" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>                    </div>
+                    <div class="clearfixDetails"></div>
+                </div>
+                                <div class="disputetxtalign"><label class="font-weight-bold" for="spDetailsResolutionDate"><span data-msgid=label.ResolutionDateLabel.0001 data-test=label.ResolutionDateLabel>Resolution Date</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+                <div class="input disputeAlignRight">
+                    <input name="spDetailsResolutionDate" type="text" value=""  id="spDetailsResolutionDate" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>                </div>
+                <div class="clearfixDetails"></div>
+                                <div class="disputetxtalign"><label class="font-weight-bold" for="spDetailsResolutionReason"><span data-msgid=label.ResolutionReasonLabel.0001 data-test=label.ResolutionReasonLabel>Resolution Reason</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+                <div class="input disputeAlignRight">
+                    <textarea name="spDetailsResolutionReason"  helper="formTextarea" id="spDetailsResolutionReason" readonly="true" disabled="disabled" class="k-textbox no-border text-right"></textarea>                </div>
+                <div class="clearfixDetails"></div>
+            </div>
+            <hr/>
+            <div style="font-size: 18px;font-weight: bold; padding-bottom: 18px; padding-top: 8px;">
+                <span data-msgid=label.DisputeContactTitle.0001 data-test=label.DisputeContactTitle>Dispute Contact</span>            </div>
+                        <div class="disputetxtalign"><label class="font-weight-bold" for=""><span data-msgid=label.ContactNameLabel.0001 data-test=label.ContactNameLabel>Contact Name</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeCustContact" type="text" value="Daikin Comfort Technologies"  id="spDisputeCustContact" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfixDetails"></div>
+                        <div class="disputetxtalign"><label class="font-weight-bold" for=""><span data-msgid=label.ContactPhoneLabel.0001 data-test=label.ContactPhoneLabel>Contact Phone</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeCustContactPhone" type="text" value="713-263-5150, option 3"  id="spDisputeCustContactPhone" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfixDetails"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for=""><span data-msgid=label.ContactEmailLabel.0001 data-test=label.ContactEmailLabel>Contact Email</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeCustContactEmail" type="text" value=""  id="spDisputeCustContactEmail" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfixDetails"></div>
+        </fieldset>
+    </div>
+</form>
+<style>
+    .no-border {
+        border: none !important;
+        box-shadow: none !important;
+    }
+    .text-right {
+        text-align: right;
+    }
+    .font-weight-bold {
+        font-weight: bold;
+        width: auto;
+    }
+    form .clearfixDetails {
+        padding: 2px 0 0;
+        clear: both;
+        height: 1px;
+    }
+    form textarea {
+        resize: none;
+        text-align: center;
+    }
+
+</style>    </div>
+
+    <div class="igAddEntireDispute" id="dialogDisputeDetailsButtons" >
+     <input type="submit" disabled="disabled" class="disputeActButton" value="Cancel Dispute" data-msgid-button="label.CancelDisputeBtn.0001" data-test="label.CancelDisputeBtn" class="k-button size1 firstButton"
+            href="javascript:"
+            data-role="iginvoicetable"
+            data-click="#: clickCancelMethod#"
+            data-template="dialogCancelDispute"
+            data-click="cancelDispute"
+            data-external-dispute-id="#: externalDisputeId#"
+            data-doc-dispute-id="#: docDisputeId#"
+            data-ffd-id="#: ffdId#"
+            data-document-id="#: documentId#"
+            data-url="#: urlDetails#"
+            data-url-cancel="#: urlCancel#"
+            data-reload="#: reload#"
+        />
+
+        <input id="disputeLineItemBackButton" type="button" class="disputeLineItemBackButton" value="Review All Line Item Disputes " data-msgid-button="label.DisputeReviewAllLineBtn.0001" data-test="label.DisputeReviewAllLineBtn" class="k-button size1 firstButton"
+            href="javascript:"
+            data-role="iginvoicetable"
+            data-status="pending"
+            data-role="iginvoicetable"
+            data-click="openDisputeLineItemDetailsTableDialog"
+            data-template="dialogDisputeLineItemTableDetails"
+            data-url="dispute/line-item"
+        />
+    </div>
+</script>
+
+<script id="dialogLineItemDisputeDetails" type="text/x-kendo-tmpl" data-width="1000" data-height="450"
+        data-title= "<span data-msgid=label.LineItemDisputeOnInvoiceTitle.0001 data-test=label.LineItemDisputeOnInvoiceTitle>Line Item Dispute on invoice</span> \##: documentId# " data-container="igDisputeDetails" data-animation="true" >
+    <div class="i-dialog-content">
+                <form id="formIgDisputeDetails" enctype="application/x-www-form-urlencoded" method="post" action="">
+    <input id="spDisputeDocumentId" name="spDisputeDocumentId" type="hidden" value="0" />    <input id="spDocumentId" name="spDocumentId" type="hidden" value="0" />    <div class="clearfix"></div>
+
+    <div id="loading"><br><br><br><br><br><br><center><img src="/IG70/img/ajax-spinner.gif" /></center></div>
+    <div id="details" style="display:none;">
+        <fieldset class="disputeSectionOne">
+            <div class="disputetxtalign"><label class="font-weight-bold"><span data-msgid=label.DisputeAgainstLabel.0001 data-test=label.DisputeAgainstLabel>Dispute Against</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div id="disputeAgainst" class="input disputeStatusRight text-right">
+                <span data-msgid=DisputeEntireInvoice.0001 data-test=DisputeEntireInvoice>Entire Invoice</span>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign" id="disputeEntireAmountLabel"><label class="font-weight-bold" for="spTotalAmount"><span data-msgid=label.TotalInvoiceAmountLabel.0001 data-test=label.TotalInvoiceAmountLabel>Total Invoice Amount</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="disputetxtalign" id="disputeLineAmountLabel" style="display: none"><label class="font-weight-bold" for="spTotalAmount"><span data-msgid=label.DisputeTotalLineItem.0001 data-test=label.DisputeTotalLineItem>Total Line Item Amount</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeSpaceRight">
+                <input name="spTotalAmount" type="text" value=""  id="spTotalAmount" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeDate"><span data-msgid=label.DateDisputedLabel.0001 data-test=label.DateDisputedLabel>Date Disputed</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeDate" type="text" value=""  id="spDisputeDate" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeAmount"><span data-msgid=label.AmountDisputedLabel.0001 data-test=label.AmountDisputedLabel>Amount Disputed</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeSpaceRight">
+                <input name="spDisputeAmount" type="text" value=""  id="spDisputeAmount" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeReasonFF"><span data-msgid=label.ReasonsforDisputesLabel.0001 data-test=label.ReasonsforDisputesLabel>Reason for Dispute</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeSpaceRight">
+                <input name="spDisputeReasonFF" type="text" value=""  id="spDisputeReasonFF" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfix"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeComment"><span data-msgid=label.CommentsLabel.0001 data-test=label.CommentsLabel>Comments</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <textarea name="spDisputeComment"  helper="formTextarea" id="spDisputeComment" readonly="true" disabled="disabled" class="k-textbox no-border text-right"></textarea>            </div>
+
+            <div class="clearfix"></div>
+            <div id="documentationDiv" class="disputeAttachmentLabel WebTitle"><label class="font-weight-bold" for="documentation"><span data-msgid=label.DocumentationLabel.0001 data-test=label.DocumentationLabel>Documentation</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAttachmentDiv disputeDetailsBrowseBtn">
+                <label class="font-weight-bold disputeAttachmentLabel disputeAttachmentMobileTitle" for="documentation"><span data-msgid=label.DocumentationLabel.0001 data-test=label.DocumentationLabel>Documentation</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+                <div class="disputeAttachmentFiles">
+                    <input name="files" id="files-details" type="file"  title="No File Chosen" data-msgid-button="BrowseBtnToolTipNoFileChosen.0001" data-test="BrowseBtnToolTipNoFileChosen"/>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div id="loadingAttachments" style="display: none"><center><img src="/IG70/img/ajax-spinner.gif" /></center></div>
+            <div id="disputeDocumentation" class="input disputeAlignRight" style="padding-left: 4px;"></div>
+            <div id="disputeDocumentationFailed" class="input disputeAlignRight" ></div>
+        </fieldset>
+        <div class="fullInvoiceDisputeSplit"></div>
+        <fieldset class="disputeSectionTwo">
+
+            <div style="font-size: 18px;font-weight: bold; padding-bottom: 18px;">
+                <span data-msgid=label.DisputeDetailsTitle.0001 data-test=label.DisputeDetailsTitle>Dispute Details</span>            </div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for="spDisputeCode"><span data-msgid=label.DisputeIDLabel.0001 data-test=label.DisputeIDLabel>Dispute ID</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeCode" type="text" value=""  id="spDisputeCode" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfixDetails"></div>
+            <div id="resolution-block" style="display: none;">
+                                <div id="approved-amount-block" style="display: none;">
+                    <div class="disputetxtalign"><label class="font-weight-bold" for="spDetailsApprovedAmount"><span data-msgid=label.ApprovedAmountLabel.0001 data-test=label.ApprovedAmountLabel>Approved Amount</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+                    <div class="input disputeAlignRight">
+                        <input name="spDetailsApprovedAmount" type="text" value=""  id="spDetailsApprovedAmount" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>                    </div>
+                    <div class="clearfixDetails"></div>
+                </div>
+                                <div class="disputetxtalign"><label class="font-weight-bold" for="spDetailsResolutionDate"><span data-msgid=label.ResolutionDateLabel.0001 data-test=label.ResolutionDateLabel>Resolution Date</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+                <div class="input disputeAlignRight">
+                    <input name="spDetailsResolutionDate" type="text" value=""  id="spDetailsResolutionDate" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>                </div>
+                <div class="clearfixDetails"></div>
+                                <div class="disputetxtalign"><label class="font-weight-bold" for="spDetailsResolutionReason"><span data-msgid=label.ResolutionReasonLabel.0001 data-test=label.ResolutionReasonLabel>Resolution Reason</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+                <div class="input disputeAlignRight">
+                    <textarea name="spDetailsResolutionReason"  helper="formTextarea" id="spDetailsResolutionReason" readonly="true" disabled="disabled" class="k-textbox no-border text-right"></textarea>                </div>
+                <div class="clearfixDetails"></div>
+            </div>
+            <hr/>
+            <div style="font-size: 18px;font-weight: bold; padding-bottom: 18px; padding-top: 8px;">
+                <span data-msgid=label.DisputeContactTitle.0001 data-test=label.DisputeContactTitle>Dispute Contact</span>            </div>
+                        <div class="disputetxtalign"><label class="font-weight-bold" for=""><span data-msgid=label.ContactNameLabel.0001 data-test=label.ContactNameLabel>Contact Name</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeCustContact" type="text" value="Daikin Comfort Technologies"  id="spDisputeCustContact" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfixDetails"></div>
+                        <div class="disputetxtalign"><label class="font-weight-bold" for=""><span data-msgid=label.ContactPhoneLabel.0001 data-test=label.ContactPhoneLabel>Contact Phone</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeCustContactPhone" type="text" value="713-263-5150, option 3"  id="spDisputeCustContactPhone" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfixDetails"></div>
+
+                        <div class="disputetxtalign"><label class="font-weight-bold" for=""><span data-msgid=label.ContactEmailLabel.0001 data-test=label.ContactEmailLabel>Contact Email</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+            <div class="input disputeAlignRight">
+                <input name="spDisputeCustContactEmail" type="text" value=""  id="spDisputeCustContactEmail" readonly="true" disabled="disabled" class="k-textbox no-border text-right"/>            </div>
+            <div class="clearfixDetails"></div>
+        </fieldset>
+    </div>
+</form>
+<style>
+    .no-border {
+        border: none !important;
+        box-shadow: none !important;
+    }
+    .text-right {
+        text-align: right;
+    }
+    .font-weight-bold {
+        font-weight: bold;
+        width: auto;
+    }
+    form .clearfixDetails {
+        padding: 2px 0 0;
+        clear: both;
+        height: 1px;
+    }
+    form textarea {
+        resize: none;
+        text-align: center;
+    }
+
+</style>    </div>
+
+    <div class="igAddEntireDispute">
+        <input type="submit" class="disputeActButton" value="Cancel Dispute" data-msgid-button="label.CancelDisputeBtn.0001" data-test="label.CancelDisputeBtn" class="k-button size1 firstButton"
+         href="javascript:"
+         data-role="iginvoicetable"
+         data-click="openCancelDisputeDialog"
+         data-template="dialogCancelDispute"
+         data-click="cancelDispute"
+        />
+
+        <input type="submit" class="disputeActButton" value="Review All Line Item Disputes " data-msgid-button="label.DisputeReviewAllLineBtn.0001" data-test="label.DisputeReviewAllLineBtn" class="k-button size1 firstButton"
+         href="javascript:"
+         data-role="iginvoicetable"
+         data-click="openDisputeDetailsDialog"
+         data-template="dialogDisputeDetails" data-url="dispute/entire/details"
+        />
+    </div>
+</script>
+
+
+<script id="dialogDisputeLineItemTableDetails" type="text/x-kendo-tmpl" data-width="1000" data-height="450"
+        data-title= "<span data-msgid=label.LineItemDisputesOnInvoiceTitle.0001 data-test=label.LineItemDisputesOnInvoiceTitle>Line Item Disputes on invoice</span> \# #: documentId# "  data-animation="false" >
+        <div class="i-dialog-content">
+            <div class="line-item-table-description">
+                <p><span data-msgid=label.StatusOfTheDisputesDis.0001 data-test=label.StatusOfTheDisputesDis>Status of the disputes on this invoice are independent of each other.</span></p>
+                <p><span data-msgid=label.DisputeNote2Disc.0001 data-test=label.DisputeNote2Disc>Note: Once all disputes have reached a resolution the invoice status will change to Completed.</span></p>
+            </div>
+            <div id="loading"><br><br><br><br><br><br><center><img src="/IG70/img/ajax-spinner.gif" /></center></div>
+            <div class="<grid-table-responsive"
+                id="pending-line-item-detail-table"
+                data-role="iginvoicetable"
+                data-init="openLineItemsDetailsTable"
+                data-row-template="rowTemplateLineItems"
+                data-columns='[{"title":"ITEM","headerAttributes":{"class":"i-cell-memo"}},{"title":"DESCRIPTION","headerAttributes":{"class":"i-cell-memo"}},{"title":"ORDERED","headerAttributes":{"class":"i-cell-memo"}},{"title":"SHIPPED","headerAttributes":{"class":"i-cell-memo"}},{"title":"UNIT PRICE","headerAttributes":{"class":"i-cell-memo"}},{"title":"AMOUNT","headerAttributes":{"class":"i-cell-memo"}},{"title":"DISPUTED","headerAttributes":{"class":"i-cell-memo"}},{"title":"STATUS","headerAttributes":{"class":"i-cell-memo"}},{"title":"ACTIONS","headerAttributes":{"class":"i-cell-memo"}}]'
+                data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute/line-item"
+                data-form-template="dialogLineItemInvoiceTemplate"
+                data-line-item-create-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute/create"
+                data-status= "#: status#"
+            >
+            </div>
+        </div>
+</script>
+<script id="dialogCancelDispute" type="text/x-kendo-tmpl" data-width="300" data-height="170"
+        data-title="<span data-msgid=label.CancelDisputeTitle.0001 data-test=label.CancelDisputeTitle>Cancel Dispute?</span>" data-container="igAddComment" data-animation="false" >
+    <div class="i-dialog-content">
+                
+<input id="disputeDocumentId" name="disputeDocumentId" type="hidden" value="#: documentId#" /><input id="disputeFDDId" name="disputeFDDId" type="hidden" value="#: ffdId#" />
+<p>
+    <span data-msgid=label.CancelDisputeDisc.0001 data-test=label.CancelDisputeDisc>This is an active unresolved dispute. Are you sure you wish to cancel?</span></p>
+    </div>
+    <div class="igAddEntireDispute">
+        <input type="submit" class="disputeActButton backButton"
+             href="javascript:"
+             data-role="iginvoicetable"
+             data-click="openDisputeDetailsDialog"
+             data-template="dialogDisputeDetails"
+             value="Back" data-msgid-button="label.DisputeBackBtn.0001" data-test="label.DisputeBackBtn"
+             data-url="#: urlDetails#"
+             data-external-dispute-id="#: externalDisputeId#"
+             data-doc-dispute-id="#: docDisputeId#"
+             data-ffd-id="#: ffdId#"
+             data-document-id="#: documentId#"
+             data-reload="#: reload#"
+        />
+        <input type="submit" class="disputeActButton confirmButton" value="Confirm" data-msgid-button="label.DisputeConfirmBtn.0001" data-test="label.DisputeConfirmBtn"  data-url="#: urlCancel#" data-reload="false" />
+    </div>
+</script>
+
+<script id="dialogLineItemInvoiceTemplate" type="text/x-kendo-tmpl" data-width="1000" data-height="450"
+        data-title= "<span data-msgid=label.DisputeLineitemsTitle.0001 data-test=label.DisputeLineitemsTitle>Dispute Line items</span> \##: lineItemId# <span data-msgid=label.DisputeOnInvoice.0001 data-test=label.DisputeOnInvoice></span> \##: invoiceNumber#" data-container="igAddComment" data-animation="true" >
+    <div class="i-dialog-content">
+                <form id="formDLI" enctype="application/x-www-form-urlencoded" method="post">
+    <input id="dliDocumentId" name="dliDocumentId" type="hidden" value="#: documentId#" />    <input id="spInvoiceNumber" name="spInvoiceNumber" type="hidden" value="#: invoiceNumber#" />    <input id="dliDisputeId" name="dliDisputeId" type="hidden" value="" />    <input id="dliItemNumber" name="dliItemNumber" type="hidden" value="#: lineItemId#" />    <input id="spLoginContactName" name="spLoginContactName" type="hidden" value="Kenneth Longoria"  id="spLoginContactName"/>    <input id="spLoginContactEmail" name="spLoginContactEmail" type="hidden" value="klongoria@comcast.net"  id="spLoginContactEmail"/>        <input id="dliItemDesc" name="dliItemDesc" type="hidden" value="#: lineItemDescription#"  id="dliItemDesc"/>    <input id="dliLineItemAmount" name="dliLineItemAmount" type="hidden" value="#: lineItemMaxAmount#"  id="dliLineItemAmount" readonly="true"/>    <input id="spDisputePoNumber" name="spDisputePoNumber" type="hidden" value="#: poNumber#" />    <div class="clearfix"></div>
+    <fieldset class="disputeSectionOne">
+                <label for="dliAgainst"><span data-msgid=label.DisputeAgainstLabel.0001 data-test=label.DisputeAgainstLabel>Dispute Against</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <select name="dliAgainst"  id="dliAgainst" tabindex="1" data-role="dropdownlist" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute/entire/create" data-template="selectOptionTemplate" data-value-template="selectOptionTemplate" required=""><option value="label.DisputeInvoice"><span data-msgid=label.DisputeInvoice.0001 data-test=label.DisputeInvoice>Dispute Invoice</span></option>
+<option value="label.DisputeLineItem" selected ><span data-msgid=label.DisputeLineItem.0001 data-test=label.DisputeLineItem>Dispute Line Item</span></option>
+</select>        </div>
+        <div class="clearfix"></div>
+
+                <label for="dliLineItemAmount"><span data-msgid=label.DisputeTotalLineItem.0001 data-test=label.DisputeTotalLineItem>Total Line Item Amount</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="i-readonly-value" style="float:right; margin-right:12px;">
+                        #: lineItemMaxAmount#        </div>
+
+        <div class="clearfix"></div>
+
+
+                <label for="dliItemDesc"><span data-msgid=label.DisputeDescription.0001 data-test=label.DisputeDescription>Description</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        #: lineItemDescription#        <div class="clearfix"></div>
+
+                <label for="dliAmount"><span data-msgid=label.AmountDisputedLabel.0001 data-test=label.AmountDisputedLabel>Amount Disputed</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="dliAmount" type="text" value=""  id="dliAmount" tabindex="4" class="k-textbox textAlignLeft" autocomplete="off" data-role="igtooltip" placeholder="0.00" onkeyup='getAmountOnButton(this.value, "line")' required="" data-content="&lt;span data-msgid=enterDisputeAmount.0001 data-test=enterDisputeAmount&gt;Enter the amount that you want to dispute for this line item.&lt;/span&gt;"/>        </div>
+        <div class="clearfix"></div>
+
+                                <label for="dliReason"><span data-msgid=label.ReasonsforDisputesLabel.0001 data-test=label.ReasonsforDisputesLabel>Reason for Dispute</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+            <div class="input">
+                <select name="dliReason"  id="dliReason" tabindex="5" data-role="dropdownlist" data-init="reasonInit" data-other-reason="otherReason" required=""><option value="" selected >Please select a reason for your dispute</option>
+</select>            </div>
+            <div class="clearfix"></div>
+        
+        
+        <div id="otherReason" style="display: none;">
+                        <label for="dliReasonOther"><span data-msgid=label.ReasonsforDisputesLabel.0001 data-test=label.ReasonsforDisputesLabel>Reason for Dispute</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+            <div class="input">
+                <input name="dliReasonOther" type="text" value=""  id="dliReasonOther" class="k-textbox" autocomplete="off" tabindex="6" maxlength="200" disabled="disabled" required=""/>            </div>
+            <div class="clearfix"></div>
+        </div>
+
+                <label for="dliComment"><span data-msgid=label.AddCommentsLabel.0001 data-test=label.AddCommentsLabel>Add Comments</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="dliComment" type="text" value=""  id="dliComment" class="k-textbox" autocomplete="off" tabindex="7" maxlength="200" data-role="igtooltip" placeholder="Optional Comments" data-content="&lt;span data-msgid=enterDisputeComment.0001 data-test=enterDisputeComment&gt;Enter a comment for this dispute&lt;/span&gt;"/>        </div>
+        <div class="clearfix"></div>
+                <div class="disputeAttachmentLabel WebTitle" ><label for="dliLineAttachement"><span data-msgid=label.AttachDocLabel.0001 data-test=label.AttachDocLabel>Attach Documentation</span><span data-msgid=colon.0001 data-test=colon>:</span></label></div>
+        <div class="input disputeAttachmentDiv">
+            <label class="disputeAttachmentLabel disputeAttachmentMobileTitle" for="dliLineAttachement"><span data-msgid=label.AttachDocLabel.0001 data-test=label.AttachDocLabel>Attach Documentation</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+            <div class="disputeAttachmentFiles">
+                <input name="files-line-item" id="files-line-item" type="file" class="disputeFileBtn" aria-label="files"  title="No File Chosen" data-msgid-button="BrowseBtnToolTipNoFileChosen.0001" data-test="BrowseBtnToolTipNoFileChosen"/>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </fieldset>
+    <div class="fullInvoiceDisputeSplit"></div>
+    <fieldset class="disputeSectionTwo">
+        <div style="font-size:18px; font-weight:bold;"><span data-msgid=label.WhoContactDisputeTitle.0001 data-test=label.WhoContactDisputeTitle>Who to Contact about this dispute?</span></div><br>
+        <div><span data-msgid=label.DisputeContactDisc.0001 data-test=label.DisputeContactDisc>Please provide a contact we can reach out to for answering questions about this dispute</span></div><br>
+                <label for="spDisputeCustContactName"><span data-msgid=label.ContactNameLabel.0001 data-test=label.ContactNameLabel>Contact Name</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="spDisputeCustContactName" type="text" value=""  id="spDisputeCustContactName" tabindex="9" class="k-textbox" autocomplete="off" data-role="igtooltip" data-content="&lt;span data-msgid=enterYourName.0001 data-test=enterYourName&gt;Enter your first and last name here.&lt;/span&gt;" placeholder="Full Name" required=""/>        </div>
+        <div class="clearfix"></div>
+
+                <label for="spDisputeCustContactPhone"><span data-msgid=label.ContactPhoneLabel.0001 data-test=label.ContactPhoneLabel>Contact Phone</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="spDisputeCustContactPhone" type="text" value=""  id="spDisputeCustContactPhone" tabindex="10" class="k-textbox" autocomplete="off" data-role="igtooltip" data-content="&lt;span data-msgid=enterPhoneNumber.0001 data-test=enterPhoneNumber&gt;Enter a phone number in which we can contact you regarding the dispute of this bill if we have any questions. It should be in the format of xxx-xxx-xxxx.&lt;/span&gt;" placeholder="(xxx) xxx-xxxx" required=""/>        </div>
+        <div class="clearfix"></div>
+
+                <label for="spDisputeCustContactEmail"><span data-msgid=label.ContactEmailLabel.0001 data-test=label.ContactEmailLabel>Contact Email</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+        <div class="input">
+            <input name="spDisputeCustContactEmail" type="email" value=""  helper="formText" id="spDisputeCustContactEmail" tabindex="11" class="k-textbox" autocomplete="off" data-role="igtooltip" data-content="&lt;span data-msgid=enterYourEmail.dispute.0001 data-test=enterYourEmail.dispute&gt;Enter an email address in which we can contact you regarding the dispute of this bill if we have any questions.&lt;/span&gt;" placeholder="email@domain.com" required=""/>        </div>
+        <div class="clearfix"></div>
+        <div class="createDisputeBtn">
+            <input id="disputeOwnerBtn" type="button" class="disputeOwner" value="I am the contact for this dispute" data-msgid-button="label.DisputeContactBtn.0001" data-test="label.DisputeContactBtn"
+                   data-role="igdialog"
+                   data-click="disputeOwnerPreFill"
+                   data-context="managedAutopay">
+        </div>
+    </fieldset>
+</form>
+
+    </div>
+    <div class="igAddEntireDispute">
+    <button type="submit" class="disputeActButton-spinner" data-spinner="true" data-role="igdialog" id="createLineDisputeBtn" data-click="submitEntireInvoiceDispute">
+        <i class="fa fa-spinner fa-spin fa-spinner-create-dispute"></i> <span data-msgid=label.CreateDisputeBtn.0001 data-test=label.CreateDisputeBtn>Create Dispute</span>    </button>
+    </div>
+</script>
+<script id="dialogCancelConfirmationInvoiceTemplate" data-async-status="false" type="text/x-kendo-tmpl" data-width="200" data-height="250"
+        data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute" >
+    <div class="i-dialog-content">#= content#</div>
+</script>
+<script id="dialogLineItemsTemplate" data-async-status="false" type="text/x-kendo-tmpl" data-width="1000" data-height="450"
+        data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute" >
+    <div class="i-dialog-content">#= content#</div>
+    <div class="i-dialog-btnbox">
+        <input type="button" value="Close" data-msgid-button="label.close.0001" data-test="label.close" class="k-button size1" data-role="igdialog" data-click="close" />
+    </div>
+</script>
+<script id="dialogAddCommentTemplate" type="text/x-kendo-tmpl" data-width="550" data-height="360"
+        data-title="<span data-msgid=addNewComment.0001 data-test=addNewComment>Add New Note</span>" data-container="igAddComment" data-animation="true">
+    <div class="i-dialog-content new-comment">
+        <p><span data-msgid=addNewComment.verbiage.0001 data-test=addNewComment.verbiage>This note is for your reference only and is not visible to Daikin Comfort Technologies.</span></p>
+                <form id="formIgNewComment" enctype="application/x-www-form-urlencoded" method="post">
+	<input id="ncDocumentId" name="ncDocumentId" type="hidden" value="#: documentId#"  id="ncDocumentId"/>	<fieldset>
+		<label><span data-msgid=label.billNameNumber.0001 data-test=label.billNameNumber>Invoice Number</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+		<div class="info">#= invoiceNumber#</div>
+		<div class="clearfix"></div>
+		<label><span data-msgid=label.billNameDate.0001 data-test=label.billNameDate>Invoice Date</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+		<div class="info">#= invoiceDate#</div>
+		<div class="clearfix"></div>
+				<label for="ncCommentText"><span data-msgid=label.note.0001 data-test=label.note>Note</span><span data-msgid=colon.0001 data-test=colon>:</span></label>
+		<div class="input">
+			<textarea name="ncCommentText"  helper="formTextarea" id="ncCommentText" class="k-textbox" autocomplete="off" style="height: 90px; resize: none;" tabindex="1" required=""></textarea>		</div>
+		<div class="clearfix"></div>
+	</fieldset>
+</form>        <div>
+                    <span data-msgid=addNewComment.hint.0001 data-test=addNewComment.hint>Note: Comments are not shared with Daikin Comfort Technologies and can only be viewed within your account.</span>            </div>
+    </div>
+    <div class="igAddComment i-dialog-btnbox">
+        <input type="button" value="Cancel" data-msgid-button="button.cancel.0001" data-test="button.cancel" class="k-button grey size1 secondButton" data-role="igdialog" data-click="close" />
+        <input type="submit" value="Save" data-msgid-button="button.save.0001" data-test="button.save" class="k-button size1 firstButton" data-role="igdialog" data-click="submit" />
+    </div>
+</script>
+<div id="lineItemDisputeDialog"></div>
+<script id="dialogDisputeAgainstLineItem" type="text/x-kendo-tmpl" data-width="1000" data-height="535"
+        data-title= "<span data-msgid=label.DisputeLineitemsTitle.0001 data-test=label.DisputeLineitemsTitle>Dispute Line items</span>" data-container="igAddComment" data-animation="false" >
+    <div class="i-dialog-content-line-item">
+        <div class="line-item-table-description">
+            <p><span data-msgid=label.ChooseDisputeDisc.0001 data-test=label.ChooseDisputeDisc>Choose a line item to dispute</span></p>
+            <p><span data-msgid=label.DisputeNoteDisc.0001 data-test=label.DisputeNoteDisc>Note: Once a line item is disputed you will no longer be able to dispute the entire invoice.</span></p>
+        </div>
+        <div id="loading"><br><br><br><br><br><br><center><img src="/IG70/img/ajax-spinner.gif" /></center></div>
+        <div class="grid-table-responsive line-item-table-details"
+            id="dispute-line-item-table"
+            data-role="iginvoicetable"
+            data-init="initInvoiceLineTable"
+            data-form-template="dialogLineItemInvoiceTemplate"
+            data-line-item-detail-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute/line-item"
+            data-line-item-create-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute/create"
+            data-document-id="#: documentId#"
+        ></div>
+    </div>
+    <div class="lineItemsTableButtons">
+        <input type="button" value="Back" data-msgid-button="label.DisputeBackBtn.0001" data-test="label.DisputeBackBtn" class="disputeCancelBtn" id="disputeAgainstInvoiceBackButton" data-role="iginvoicetable" data-click="openAddEntireDisputeInvoiceDialog" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute/entire/create" data-template="dialogEntireInvoiceTemplate" href="javascript:" data-avoid-animation="true" />
+        <input type="button"
+        value="Dispute Invoice Instead" data-msgid-button="label.DisputeInvoiceInsteadBtn.0001" data-test="label.DisputeInvoiceInsteadBtn"
+        class="disputeActLineItemButton-spinner"
+        id="disputeAgainstInvoiceButton"
+        data-role="iginvoicetable"
+        data-click="openAddEntireDisputeInvoiceDialog"
+        data-template="dialogEntireInvoiceTemplate"
+        href="javascript:"
+        data-avoid-animation="true"
+        data-url = https://secure.billtrust.com/DAIKINCOMFORT/ig/dispute/entire/create         />
+    </div>
+</script>
+
+<script id="lineItemRowTemplate" type="text/x-kendo-tmpl">
+    <tr class="line-item-table-tr">
+        <td class="i-cell-line_item_id_col" title="#= LINE_ITEM_ID_COL#" >
+                        <div class="GridMobileTitle"><span data-msgid=label.DisputeItem.0001 data-test=label.DisputeItem>Item</span></div>
+                        <div class="display-filed">#: LINE_ITEM_ID_COL#</div>
+                    </td><td class="i-cell-disputed" title="#= DISPUTED#" >
+                        <div class="GridMobileTitle"><span data-msgid=label.DisputeDisputed.0001 data-test=label.DisputeDisputed>Disputed</span></div>
+                        <div class="display-filed">#: DISPUTED#</div>
+                    </td><td class="i-cell-status" title="#= STATUS#" >
+                        <div class="GridMobileTitle"><span data-msgid=label.DisputeStatus.0001 data-test=label.DisputeStatus>Status</span></div>
+                        <div class="display-filed">#= STATUS#</div>
+                    </td><td class="i-cell-item_no_desc_col" title="#= ITEM_NO_DESC_COL#" >
+                        <div class="GridMobileTitle"><span data-msgid=label.DisputeDescription.0001 data-test=label.DisputeDescription>Description</span></div>
+                        <div class="display-filed">#: ITEM_NO_DESC_COL#</div>
+                    </td><td class="i-cell-ext_amount_col" title="#= EXT_AMOUNT_COL#" >
+                        <div class="GridMobileTitle"><span data-msgid=label.DisputeAmount.0001 data-test=label.DisputeAmount>Amount Disputed</span></div>
+                        <div class="display-filed">#: EXT_AMOUNT_COL#</div>
+                    </td><td class="i-cell-actions" title="Actions" >
+                        <div class="GridMobileTitle"><span data-msgid=label.DisputeAction.0001 data-test=label.DisputeAction>Action</span></div>
+                        <div class="display-filed"><a 
+        class="tableRow"
+        href="javascript:" 
+        data-item-id="#:LINE_ITEM_ID_COL#" 
+        data-role="iginvoicetable" 
+        data-click="openAddLineItemDisputeInvoiceDialog"
+        data-template="dialogEntireInvoiceTemplate"
+        data-document-id="#: DocumentId#"
+        data-line-csv="#:HIDDEN_LINE_CSV_COL#"
+        data-max-amount="#:HIDDEN_MAX_AMOUNT_COL#"
+        data-item-description="#:HIDDEN_ITEM_DESCRIPTION_COL#"
+        data-currency="#: currency#"
+        data-url="#: url#"><span data-msgid=label.DisputeLinks.0001 data-test=label.DisputeLinks>Dispute</span></a></div>
+                    </td>    </tr>
+</script>
+<script id="duplicatePaymentWarningTemplate" type="text/x-kendo-tmpl" data-width="400" data-height="350">
+
+    <div class="popupContent">
+        <span data-msgid=dupPaymentWarnDesc.0001 data-test=dupPaymentWarnDesc>Statement and invoice amounts may overlap and result in duplicate payments. Confirm your payment selection below.</span>    </div>
+    <div class="sumBucketsContent">
+        <div class="sumBucketItem">
+            <div class="sumBucketItemLeft">
+                <span data-msgid=label.invoices.0001 data-test=label.invoices>Invoices</span>            </div>
+            <div id="sumBucketContentRight">
+                <div class="sumBucketItemMid">#= data.totalData.invoicePayAmt #</div>
+                <div class="sumBucketItemRight">
+                    <span data-test="label.documents">#= data.totalData.totalInvoiceDocuments # Documents</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sumBucketsContent">
+        <div class="sumBucketItem">
+            <div class="sumBucketItemLeft">
+                <span data-msgid=label.statements.0001 data-test=label.statements>Statements</span>            </div>
+            <div id="sumBucketContentRight">
+                <div class="sumBucketItemMid">#= data.totalData.statementPayAmt #</div>
+                <div class="sumBucketItemRight">
+                    <span data-test="label.documents">#= data.totalData.totalStatementDocuments # Documents</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sumBucketsContent">
+        <div class="sumBucketItem total">
+            <div class="sumBucketItemLeft">
+                <span data-msgid=TotalBucketLabel.0001 data-test=TotalBucketLabel>Total</span>            </div>
+            <div id="sumBucketContentRight">
+                <div class="sumBucketItemMid" id="totalAmountDisplayOnWarningPopup">#= data.totalData.totalAmount #</div>
+                <div class="sumBucketItemRight">
+                    <span data-test="label.documents">#= data.totalData.totalDocs # Documents</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span data-msgid=dupPaymentWarnOption.0001 data-test=dupPaymentWarnOption>Select an option to move forward:</span></script>
+<script>
+    
+    function getAmountOnButton(amountDisputedValue, form) {
+        var buttonName = T('label.CreateDisputeBtn');
+        var buttonText = '<i class="fa fa-spinner fa-spin fa-spinner-create-dispute"></i>' + '<span data-msgid="label.CreateDisputeBtn.0001">' + buttonName + '</span>';
+        if (isNaN(amountDisputedValue) === false && amountDisputedValue.trim() !== '') {
+            buttonText = buttonText + ' for $' + amountDisputedValue;
+        }
+        if (form === 'entire') {
+            document.getElementById('createEntireDisputeBtn').innerHTML = buttonText;
+        }
+        else if (form === 'line') {
+            document.getElementById('createLineDisputeBtn').innerHTML = buttonText;
+        }
+    }
+
+    $('body').off('click', '.view-pdf-link').on('click', '.view-pdf-link', function(e) {
+
+        $.ajax({
+            type: "POST",
+            url: $(this).data('url'),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({
+                documentId: $(this).data('id'),
+                pdfUrl: $(this).data('pdf-url')
+            }),
+            success: function (result)
+            {
+                if(result.success && result.url != '')
+                {
+                    window.open(result.url, '_blank')
+                    return;
+                }else{
+                    alert("Something went wrong")
+                }
+            },
+            error: function ($result) {
+                alert("Something went wrong")
+            }
+        });
+    });
+
+    $('body').off('click', '.download-ubl').on('click', '.download-ubl', function(e) {
+        let form = document.forms['fileDownloadForm'];
+        form.elements["url"].value = $(this).data('fileurl')
+        form.submit();
+    });
+</script>
+<style>
+
+    .pending {
+        color: #CC8500!important;
+        font-size: 21px;
+    }
+
+    .approved {
+        color: #3DA946!important;
+        font-size: 21px;
+    }
+    .denied{
+        color: #CF1F07!important;
+        font-size: 21px;
+    }
+    .rejected{
+        color: #CF1F07!important;
+        font-size: 21px;
+    }
+    .disputeActButton.backButton{
+        background-color: #515151 !important;
+        border-color: #515151 !important;
+    }
+
+    .disputeActButton.confirmButton{
+        background-color: #E8682A !important;
+        border-color: #E8682A !important;
+    }
+    .disputeActButton:disabled{
+        background-color: #515151 !important;
+        border-color: #515151 !important;
+        opacity: 0.3 !important;
+    }
+    .fa-spinner-create-dispute {
+        display: none;
+    }
+    .documentation {
+        padding-right: 10px;
+        padding-top: 7px;
+        text-align: right;
+    }
+    .k-clear-selected, .k-upload-selected {
+        display: none !important;
+    }
+
+    p.documentation {
+        border: 1px solid #cacaca;
+        border-radius: 4px;
+        padding: 5px 5px 5px 5px;
+    }
+
+    .disputeAttachmentDiv {
+        float: left;
+    }
+
+    .k-i-close{
+        cursor: pointer;
+    }
+
+    #downloadForm {
+        display: none;
+    }
+</style>
+
+<div class="viewautopaypopup" style="display: none;">
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var billdateText = $(".grid-table-responsive .k-grid-header").find("[data-msgid='co.BillDate']").text();
+        if(billdateText == '') {
+            billdateText = '<span data-msgid=label.invoiceDate.0001 data-test=label.invoiceDate>Invoice Date</span>';
+        }   
+        $(".dateFilterLabel").html('<span>'+billdateText+':</span>');
+
+        $(document).on('click', function(event) {
+            if (!$(event.target).closest('#billDateDropDownSelectedValues, #formContainer, input[type="radio"]').length) {
+                $('#formContainer').hide();
+                $clickTimes = 1;
+            }
+        });
+
+        document.querySelectorAll('.k-header-column-menu').forEach(el => {
+            el.addEventListener(
+                'mousedown',
+                function () {
+                    clickedKendoArrow = true;
+                    $('#formContainer').hide();
+                }
+            );
+        });
+        
+    });
+</script>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div id="promofoot" data-msgid-block="block.views.promofoot.1000">
+			<table width="100%" height="60px">
+  <tr>
+    <td align="center"><img src="/img/poweredbybilltrust.gif" /></td>
+  </tr>
+</table>		</div>
+		<div class="footer-links">
+    <span class="faqLink"><a href="javascript:" data-role="igdialog" data-template="dialogFAQTemplate" data-click="open"><span data-msgid=faq.0001 data-test=faq>FAQ</span></a></span>
+            <span><a href="javascript:" OnClick="javascript: window.open('https://secure.billtrust.com/DAIKINCOMFORT/ig/subscriber-agreement','','width=1200,height=700,left=200,top=50,scrollbars=yes');return false;"><span data-msgid=subscriberAgreement.0001 data-test=subscriberAgreement>Subscriber Agreement</span></a></span>
+        <span><a id="contactLink" href="javascript:" data-role="igdialog" data-template="dialogContactTemplate" data-click="open"><span data-msgid=label.contactUs.0001 data-test=label.contactUs>Contact Us</span></a></span>
+    </div>
+<script id="dialogFAQTemplate" type="text/x-kendo-tmpl" data-title="<span data-msgid=frequentlyAskedQuestions.0001 data-test=frequentlyAskedQuestions>Frequently Asked Questions</span>" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/faq" data-width="800" data-height="550">
+	<div class="i-dialog-content scroll">#= content#</div>
+	<div class="i-dialog-btnbox">
+		<input type="button" value="Close" data-msgid-button="label.close.0001" data-test="label.close" class="k-button size1" data-role="igdialog" data-click="close" />
+	</div>
+</script>
+<script id="dialogContactTemplate" type="text/x-kendo-tmpl" data-title="<span data-msgid=haveQuestions.0001 data-test=haveQuestions>Have Questions? Contact Us</span>" data-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/contact" data-width="700" data-height="300">
+	<div class="i-dialog-content scroll">#= content#</div>
+	<div class="i-dialog-btnbox">
+		<input type="button" value="Close" data-msgid-button="label.close.0001" data-test="label.close" class="k-button size1" data-role="igdialog" data-click="close" />
+	</div>
+</script>	</div>
+				
+	<!-- Managed Auto Pay -->
+	
+	<script type="text/x-kendo-tmpl"
+		data-role="igtimeout"
+		data-sign-out-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/signout"
+		data-refresh-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/refresh"
+		data-timeout-url="https://secure.billtrust.com/DAIKINCOMFORT/ig/time-out"
+		data-timeout-time="30"
+		data-title="<span data-msgid=systemAboutToTimeOut.0001 data-test=systemAboutToTimeOut>System About To Time Out</span>"
+		data-width="510"
+		data-height="150">
+		<div class="i-dialog-content"><span data-msgid=timeoutWarning.0001 data-test=timeoutWarning>We have not heard from you in a while, to continue working click the Extend My Session button.</span></div>
+		<div class="i-dialog-btnbox">
+			<input type="button" value="Sign Out" data-msgid-button="button.signOut.0001" data-test="button.signOut" class="k-button grey size1" data-role="igtimeout" data-click="signOut" />
+			<input type="button" value="Extend My Session" data-msgid-button="button.extendSession.0001" data-test="button.extendSession" class="k-button size2" data-role="igtimeout" data-click="extend" />
+		</div>
+	</script>
+	<script>
+						initSet();
+		function initSet() {
+			isResponsive = "N";
+			alterGrid = false;
+			screenWidth  = window.innerWidth;
+			prevScreenWidth = screenWidth;
+
+			isMobile = {
+			    Android: function() {
+			        return navigator.userAgent.match(/Android/i);
+			    },
+			    BlackBerry: function() {
+			        return navigator.userAgent.match(/BlackBerry/i);
+			    },
+			    iOS: function() {
+			        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+			    },
+			    Opera: function() {
+			        return navigator.userAgent.match(/Opera Mini/i);
+			    },
+			    Windows: function() {
+			        return navigator.userAgent.match(/IEMobile/i);
+			    },
+			    any: function() {
+			        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+			    }
+			};
+		}
+		$(document).ready(function() {
+
+			/* start: Responsive layout changes*/
+
+			if (isResponsive === 'Y') {
+				if(screenWidth < 950) {
+					if(isMobile.any()){
+						$('body .k-grid-header-wrap').find('input[name=fromDisplay], input[name=toDisplay]').attr('type', 'date');
+					}
+					$('body').removeClass('desktop').addClass('mobile');
+				} else {
+					$('body').removeClass('mobile').addClass('desktop');
+				}
+
+				document.addEventListener('scroll', function (event) {
+
+			        if(screenWidth < 950 && $(".tableCount").length > 0) {
+			        	var  countHeaderPosition = $(".tableCount").position(),
+			        		fixScrollHeight = countHeaderPosition.top + $(".tableCount").height();
+
+			            if ($(document).scrollTop() > fixScrollHeight) {
+			                $(".tableCount").addClass('fixedTop');
+			            } else {
+			                $(".tableCount").removeClass('fixedTop');
+			            }
+			        }
+			    });
+				$(window).on('resize', function() {
+					var settingTitle = $('.payAccountFormTitle div.left').html() || "";
+					screenWidth  = window.innerWidth;
+                    $(document.body).find("[data-role=popup]").kendoPopup("close");
+					/*Grid should be loaded only once if the screen width goes below/above 950px*/
+					if ((prevScreenWidth > 950 && screenWidth > 950) ||
+						prevScreenWidth < 950 && screenWidth < 950) {
+						alterGrid = false;
+					} else {
+						if(screenWidth < 950) {
+							$('body').removeClass('desktop').addClass('mobile');
+							$('body .k-animation-container').hide();
+						} else {
+							$('body').removeClass('mobile').addClass('desktop');
+						}
+						/* To show the payment settings in left menu if other settings is opened in large screen*/
+						if( $('.leftMenu ul li.selected a').hasClass('profset') ||
+                            $('.leftMenu ul li.selected a').hasClass('chpass') ||
+                            $('.leftMenu ul li.selected a').hasClass('payset') ||
+                            $('.leftMenu ul li.selected a').hasClass('notset') ) {
+
+							$(".settingsMenu").removeClass('settingsHide');
+	        				$(".leftMenu").addClass('settingsHide');
+						} else {
+							$(".settingsMenu").addClass('settingsHide');
+	        				$(".leftMenu").removeClass('settingsHide');
+						}
+						alterGrid = true;
+
+						/* To set the body scrolltop as zero when we rotate the device from portait to landscape and viceversa*/
+						$("body").animate({ scrollTop: 0 });
+
+            			$('body').find(".fulllist[data-role=popup]").parent().css('overflow','hidden').hide();
+
+            			if ($("div.modalWindow.paymentModifyTable").length > 0 ||
+            				$("div.modalWindow.workflowModal").length > 0) {
+            				if(screenWidth < 950 && isResponsive === 'Y') {
+            					$('.k-overlay').hide();
+            					$('body').removeClass('lock-position').addClass('unlock-position');
+            				} else {
+            					$('.k-overlay').show();
+            				}
+            			}
+					}
+					
+					prevScreenWidth = screenWidth;
+				});
+			} else {
+				$('body').addClass('nonResponsive');
+			}
+			
+			$(".menuicon").on('click', function (e) {
+				$('body .navcontainer').addClass('slideOpen');
+			});
+
+			$("#closemenu, .nav .mainmenu li a").on('click', function(e) {
+			   $('body .navcontainer').removeClass('slideOpen');
+			   $('div.header').removeClass('hideHeader');
+			   $(".usermenu").hide();
+			   e.stopPropagation();
+			});
+
+			$(".user").on('click', function(e) {  
+				$(".usermenu").slideToggle();
+				e.stopPropagation();
+			});
+			$("body").on('click', function() {  
+				$(".usermenu").hide();
+			});
+
+			/* end: Responsive layout changes*/
+			kendo.culture('en-US');
+
+			$(document).ajaxComplete(function(event, xhr, settings) {
+				if(xhr.getResponseHeader('X-IG-MaintenanceMode') == 'Y') {
+					document.location.href = 'https://secure.billtrust.com/DAIKINCOMFORT/ig/signout';
+				}
+			});
+		});
+					</script>
+
+	    
+		    <script>setCurrentLanguageKey("en_US");</script>
+		</body>
+</html>
